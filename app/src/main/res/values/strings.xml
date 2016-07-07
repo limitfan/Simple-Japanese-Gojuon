@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="drill">Gojuon Test</string>
+    <string name="refresh_m">Refresh coins</string>
+    <string name="remove_ad">Remove Ads</string>
+    <string name="setting">软件设置</string>
+    <string name="dlmanager">扩展包下载</string>
+    <string name="audio_error">音频文件错误，请重新安装扩展包！</string>
+    <string name="begin_to_down">开始下载</string>
+    <string name="begin_to_uncompress">开始安装</string>
+    <string name="wallpaper_custom_guide">自定义壁纸安装向导</string>
+    <string name="prewall">前1张</string>
+    <string name="nextwall">后1张</string>
+   <string name="processing">处理中</string>
+    <string name="set_wallpaper">作壁纸</string>
+    <string name="reset">重置</string>
+    <string name="search_hint">关键字</string>
+      <string name="current_coin">Current M Coins:</string>
+        <string name="activate">Remove Ads</string>
+    <string name="get_coin">Free M Coins</string>
+    <string name="need_extra">Remove Ads</string>
+     <string name="acivate_success">Ads are successfully removed, restart this app to work.</string>
+    <string name="coin_error">【Attention】1,Acquiring M coin balance needs network！\n2,It will be hinted "获取奖励成功" when installed properly。\n3,Acquiring M coin balance may have delay，close and open this dialog again to update M coin blance。\n4,To download more apps to help author.</string>
+     <string name="need_extra_detail">120M coins are needed to remove ads.You can choose to [Download] and [Install] suggested apps to earn M coins.</string>
+    
+      <string name="help_manual">Q1,No sound?\nA1,please make sure your phone\' media sound is loud enough.\nQ2,What\'s the meaning of each mode?\nA2,It could be guessed from its name.</string>
+    <string name="kana_writing">Kana Writing</string>
+   
+    <string name="read">About</string>
+    <string name="builtindb">About his App</string>
+    <string name="userdb">Feedback</string>
+    <string name="wallpaper_gallery">Download Suggested Apps</string>
+    <string name="download">Download</string>
+    <string name="operation">Further Reading</string>
+    <string name="download_extra">Introduction to Gojuon</string>
+    <string name="help_title">Help Manual</string>
+    
+    <string name="help">[Help]</string>
+    <string name="mode">Mode</string>
+    <string name="menu_hira_pron">Hira Pronounce</string>
+    <string name="menu_hira_draw">Hira Strokes</string>
+    <string name="menu_hira_demo">Hira Demo</string>
+    <string name="menu_kata_pron">Kata Pronounce</string>
+    <string name="menu_kata_draw">Kata Strokes</string>
+    <string name="menu_kata_demo">Kata Demo</string>
+    
+    <string name="mode_hiragana_pronounce">Mode[Hiragana Pronunciation]</string>
+    <string name="mode_hiragana_draw">Mode[Hiragana Strokes Order]</string>
+    <string name="mode_hiragana_demo">Mode[Hiragana Detail]</string>
+    <string name="mode_katakana_pronounce">Mode[Katakana Pronunciation]</string>
+    <string name="mode_katakana_draw">Mode[Katakana Strokes Order]</string>
+    <string name="mode_katakana_demo">Mode[Katakana Detail]</string>
+    
+    <string name="more_apps">More Apps</string>
+    <string name="no_more">No more!</string>
+    <string name="close">Close</string>
+    <string name="play">Play</string>
+    <string name="hello">Hello World, Main!</string>
+    <string name="app_name">Japanese Gojuon</string>
+    <string name="version">Simple Japanese GojuonV2.5</string>
+    <string name="app_version_name">Version 2.5</string>
+    <string name="copyright">Copyright ©2012 limitfan. All Rights Reserved.</string>
+    <string name="poweredby">UI powered by Tokyometro</string>
+    <string name="attention">注意</string>
+    <string name="back">Back</string>
+    <string name="done">完了</string>
+    <string name="mail">Author mail:limitfan@gmail.com</string>
+    <string name="ok">了解</string>
+    <string name="next">Next</string>
+    <string name="previous">Prev</string>
+    <string name="title_textbook">课本</string>
+    <string name="title_trace">足迹</string>
+    <string name="title_bookmark">生词本</string>
+    <string name="title_more">More</string>
+    <string name="more_about">About this app</string>
+    <string name="empty_box">清空</string>
+    <string name="seion">Seion</string>
+    <string name="dakuon">Dakuon</string>
+    <string name="youon">Youon</string>
+    <string name="dakuonhalf">Dakuon</string>
+    <string name="kata">Katakana</string>
+    <string name="hira">Hirakana</string>
+    <string name="exit">Exit this app</string>
+    <string name="confirm_exit">Confirm to exit?</string>
+    <string name="confirm">Confrim</string>
+    <string name="cancel">Cancel</string>
+    <string name="feedback">Feedback</string>
+    <string name="intro">Introduction to gojuon</string>
+    <string name="advanced">Advanced learning</string>
+    <string name="pronounce">Pronounce</string>
+    <string name="demo">Pronounce the demo word</string>
+    <string name="prevwarning">No more kanas ahead==!</string>
+    <string name="nextwarning">No more kanas==!</string>
+    <string name="fetch">Fetching audio...</string>
+    <string name="fetch_error">Fetching\'s failed. Internet connection is needed.</string>
+    <string name="about_details_chn">动漫日语100句的图标素材来自网络，日语100句文本，音频优化自蛋蛋老师的新浪博客。</string>
+    <string name="about_details_eng">Anime Japanese 100\'s icon materials are collected from the Internet,and 100 Japanese sentences\'s texts and audios are polished from dandanacjp\'s sina blog.\n</string>
+    <string name="about_details_url">http://blog.sina.com.cn/dandanacjp</string>
+    <string name="ha">あさ (asa) --- morning</string>
+    <string name="hi">いぬ (inu) --- dog</string>
+    <string name="hu">うみ (umi) --- sea</string>
+    <string name="he">えき (eki) --- station</string>
+    <string name="ho">おかね (okane) --- money</string>
+    <string name="hka">かさ (kasa) --- umbrella</string>
+    <string name="hki">きた (kita) --- north</string>
+    <string name="hku">くるま (kuruma) --- car</string>
+    <string name="hke">けむり (kemuri) --- smoke</string>
+    <string name="hko">こえ (koe) --- voice</string>
+    <string name="hsa">さかな (sakana) --- fish</string>
+    <string name="hshi">しお (shio) --- salt</string>
+    <string name="hsu">すな (suna) --- sand</string>
+    <string name="hse">せかい (sekai) --- world</string>
+    <string name="hso">そら (sora) --- sky</string>
+    <string name="hta">たけ (take) --- bamboo</string>
+    <string name="hchi">ちず (chizu) --- map</string>
+    <string name="htsu">つき (tsuki) --- moon</string>
+    <string name="hte">てんき　(tenki) --- weather</string>
+    <string name="hto">とけい (tokei) --- watch</string>
+    <string name="hna">なまえ (namae) --- name</string>
+    <string name="hni">にほん (nihon) --- Japan</string>
+    <string name="hnu">ぬま (numa) --- swamp</string>
+    <string name="hne">ねこ　(neko) --- cat</string>
+    <string name="hno">のど (nodo) --- throat</string>
+    <string name="hha">はた (hata) --- flag</string>
+    <string name="hhi">ひかり (hikari) --- light</string>
+    <string name="hfu">ふね (fune) --- boat</string>
+    <string name="hhe">へや　(heya) --- room</string>
+    <string name="hho">ほし (hoshi) --- star</string>
+    <string name="hma">まくら (makura) --- pillow</string>
+    <string name="hmi">みなと (minato) --- harbour</string>
+    <string name="hmu">むし (mushi) --- insect</string>
+    <string name="hme">めがね(megane) --- glasses</string>
+    <string name="hmo">もり (mori) --- forest</string>
+    <string name="hya">やま (yama) --- mountain</string>
+    <string name="hyu">ゆき (yuki) --- snow</string>
+    <string name="hyo">よる (yoru) --- evening</string>
+    <string name="hra">らくだ (rakuda) --- camel</string>
+    <string name="hri">りんご (ringo) --- apple</string>
+    <string name="hru">るす (rusu) --- not at home</string>
+    <string name="hre">れきし (rekishi) --- history</string>
+    <string name="hro">ろうそく (rousoku) --- candle</string>
+    <string name="hwa">わに (wani) --- crocodile</string>
+    <string name="hwo">empty</string>
+    <string name="hn">empty</string>
+    <string name="ka">アメリカ (amerika) --- America</string>
+    <string name="ki">イギリス (igirisu) --- England</string>
+    <string name="ku">ウクライナ (ukuraina) --- Ukraine</string>
+    <string name="ke">エジプト (ejiputo) --- Egypt</string>
+    <string name="ko">オランダ (oranda) --- Holland</string>
+    <string name="kka">カナダ (kanada) --- Canada</string>
+    <string name="kki">キャンプ (kyanpu) --- camping</string>
+    <string name="kku">クイズ (kuizu) --- quiz</string>
+    <string name="kke">ケニア (kenia) --- Kenya</string>
+    <string name="kko">コーヒー (koohii) --- coffee</string>
+    <string name="ksa">サッカー (sakkaa) --- soccer</string>
+    <string name="kshi">シャワー (shawaa) --- shower</string>
+    <string name="ksu">スイス (suisu) --- Swiss</string>
+    <string name="kse">セーター (seetaa) --- sweater</string>
+    <string name="kso">ソファー (sofaa) --- sofa</string>
+    <string name="kta">タクシー (takushii) --- taxi</string>
+    <string name="kchi">チェス (chesu) --- chess</string>
+    <string name="ktsu"> ツアー (tsuaa) --- tour</string>
+    <string name="kte">テニス (tenisu) --- tennis</string>
+    <string name="kto">トマト (tomato) --- tomato</string>
+    <string name="kna">ナイフ (naifu) --- knife</string>
+    <string name="kni">ニュース (nyuusu) --- news</string>
+    <string name="knu">ヌガー (nugaa) --- nougat</string>
+    <string name="kne">ネクタイ (nekutai) --- necktie</string>
+    <string name="kno">ノルウェー (noruwei) --- Norway</string>
+    <string name="kha">ハープ (haapu) --- harp</string>
+    <string name="khi">ヒント (hinto) --- hint</string>
+    <string name="kfu">フランス (furansu) --- France</string>
+    <string name="khe">ヘブライ (heburai) --- Hebrew</string>
+    <string name="kho">ホテル (hoteru) --- hotel</string>
+    <string name="kma">マレーシア (mareeshia) --- Malaysia</string>
+    <string name="kmi">ミュージカル (myuuzikaru) --- music drama</string>
+    <string name="kmu">ムード (muudo) --- mood</string>
+    <string name="kme">メキシコ (mekishiko) --- Mexico</string>
+    <string name="kmo">モナコ (monako) --- Monaco</string>
+    <string name="kya">ヤンキー (yankii) --- American</string>
+    <string name="kyu">ユダヤ (yudaya) --- Jew</string>
+    <string name="kyo">ヨーロッパ (yooroppa) --- Europe</string>
+    <string name="kra">ラジオ (rajio) --- radio</string>
+    <string name="kri">リーグ (riigu) --- league</string>
+    <string name="kru">ルビー (rubii) --- ruby</string>
+    <string name="kre">レバノン (rebanon) ---  Lebanon</string>
+    <string name="kro">ロケット (roketto) --- rocket</string>
+    <string name="kwa">ワイン (wain) --- wine</string>
+    <string name="kwo">empty</string>
+    <string name="kn">ロンドン (rondon) --- London</string>
+    <string name="gojuuon">          Gojuon:\nThe gojūon (五十音 lit. Fifty Sounds) is a Japanese ordering of kana.
+It is named for the 5×10 grid in which the characters are displayed, but the grid is not completely filled, and, further, there is an extra character added outside the grid at the end: with 5 gaps and 1 extra character, the current number of distinct kana in a syllabic chart is therefore 46. Some of these gaps have always existed as gaps in sound: there was no yi or wu in Old Japanese, and ye disappeared in Late Old Japanese, predating the kana: the kana for e, i, and u double up for those phantom values. Also, with the spelling reforms after World War II, the kana for we and wi were replaced with e and i, the sounds they had developed into. The kana for syllabic n (ん) is not part of the grid, as it was introduced long after gojūon ordering was devised (previously む was used for this sound).
+The gojūon contains all the basic kana, but it does not include:
+versions of kana with a dakuten such as が or だ, or kana with handakuten such as ぱ or ぷ,
+smaller kana, such as the sokuon (っ) or yōon (ゃ,ゅ,ょ).
+The gojūon order is the prevalent system for collating Japanese in Japan. For example, dictionaries are ordered using this method. Other systems used are the iroha ordering, and, for kanji, the radical ordering.</string>
+    <string name="osusumeOne"><big>Anime Japanese 100</big>:\n[This app is in Chinese.]本应用收集了最常用的100句动漫中的日语，详细说明了其使用方法，每一句都有原声的动漫配音，帮助你快速掌握动漫中出现的常用语句，提高日语水平，增强国际视野(^_^)。
+       </string>
+   <string name="osusumeTwo">
+       <big>Omni Japanese Learning</big>:\n\n[This app is in Chinese.]本应用收集了新版中日交流标准日本语初级上下册，中级上下册的所有单词和初级上下册的每一课的重要语法点，又有基础句型和新闻热词栏目，
+可以全方面学习日语的知识点和单词。并配有生词本模块和足迹记录模块，方便用户记录课程中的重点单词和所学课程进展。
+   </string>
+</resources>

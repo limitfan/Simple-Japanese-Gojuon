@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+       <LinearLayout android:orientation="vertical" android:id="@id/header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+            <RelativeLayout android:background="@drawable/header_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <include layout="@layout/common_header_back" />
+                <include layout="@layout/common_header_title"/>
+            </RelativeLayout>
+        </LinearLayout>
+     <LinearLayout android:orientation="horizontal" android:id="@+id/id_time_layout" android:layout_width="fill_parent" android:layout_height="wrap_content"
+         android:background="@drawable/station_info_exit_heading">
+            <TextView android:id="@+id/id_test_index" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="3.0dip" android:text="1" style="@style/testHeaderTextFont" />
+            <TextView android:id="@+id/id_total_index" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" android:layout_marginTop="3.0dip" style="@style/testHeaderTextFont" />
+            <LinearLayout android:gravity="right" android:orientation="horizontal" android:id="@+id/id_time_right_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+               
+            </LinearLayout>
+       </LinearLayout>
+     
+      <include layout="@layout/word_card"/>
+      <LinearLayout android:orientation="horizontal" android:id="@+id/id_test_answer_layout1" android:background="@drawable/s06_a_n_2h_xml" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_weight="1.0" android:soundEffectsEnabled="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <ImageView android:layout_gravity="left|center" android:id="@+id/id_parse1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+            <TextView android:layout_gravity="left|center" android:id="@+id/id_kana1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" style="@style/answerTextFont" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/id_test_answer_layout2" android:background="@drawable/s06_a_n_2h_xml" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_weight="1.0" android:soundEffectsEnabled="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <ImageView android:layout_gravity="left|center" android:id="@+id/id_parse2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+            <TextView android:layout_gravity="left|center" android:id="@+id/id_kana2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" style="@style/answerTextFont" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/id_test_answer_layout3" android:background="@drawable/s06_a_n_2h_xml" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_weight="1.0" android:soundEffectsEnabled="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <ImageView android:layout_gravity="left|center" android:id="@+id/id_parse3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+            <TextView android:layout_gravity="left|center" android:id="@+id/id_kana3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" style="@style/answerTextFont" />
+        </LinearLayout>
+     
+      <Button android:layout_gravity="bottom|right|center" android:id="@+id/id_pass" android:background="@drawable/s06_pass_n_2h_xml" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:layout_weight="1.0" android:soundEffectsEnabled="false" />
+     
+</LinearLayout>

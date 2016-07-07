@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@drawable/common_list_background_selector" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" android:descendantFocusability="blocksDescendants">
+    <TextView android:textSize="25.0sp" android:focusable="false" android:textStyle="bold" android:textColor="@color/color_black" android:id="@+id/btnMain" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_margin="1.0dip" android:text="あ" android:gravity="center"/>
+    <TextView android:textSize="16.0sp" android:focusable="false" android:textColor="@color/color_black" android:id="@+id/btnSub" android:background="@color/color_grey_light" android:layout_width="fill_parent" android:layout_height="28.0dip" android:text="a" android:gravity="center" />
+</LinearLayout> 

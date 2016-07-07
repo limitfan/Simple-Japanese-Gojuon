@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string-array name="dict_names">
+        <item>ec</item>
+        <item>ej</item>
+        <item>ee</item>
+        <item>jc</item>
+        <item>je</item>
+        <item>nn</item>
+    </string-array>
+    <string-array name="dict_labels">
+        <item>新标初(上)</item>
+        <item>新标初(下)</item>
+        <item>基础句型 </item>
+        <item>新标中(上)</item>
+        <item>新标中(下)</item>
+        <item>新闻热词</item>
+    </string-array>
+</resources>

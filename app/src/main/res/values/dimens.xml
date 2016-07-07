@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="header_title_text">20.0dip</dimen>
+    <dimen name="header_subtitle_text">16.0dip</dimen>
+    <dimen name="header_tab_text">14.0dip</dimen>
+    <dimen name="header_button_text">12.0dip</dimen>
+    <dimen name="footer_text">13.0dip</dimen>
+    <dimen name="layout_padding">10.0dip</dimen>
+    <dimen name="layout_margin">15.0dip</dimen>
+    <dimen name="layout_item_margin">5.0dip</dimen>
+    <dimen name="content_title_text">20.0dip</dimen>
+    <dimen name="content_large_text">18.0dip</dimen>
+    <dimen name="content_medium_text">14.0dip</dimen>
+    <dimen name="content_small_text">10.0dip</dimen>
+</resources>

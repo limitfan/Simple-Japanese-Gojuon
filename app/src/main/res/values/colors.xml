@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="text_main">#ff3f4600</color>
+    <color name="black_medium">#ff222222</color>
+    <color name="black_overlay">#aa000000</color>
+    <color name="gray_light">#fff7f7f7</color>
+    <color name="gray_medium">#ff808080</color>
+    <color name="gray_dark">#ff4f4f4f</color>
+    <color name="red_medium">#ffde2f38</color>
+    <color name="blue_medium">#ff1678a1</color>
+    <color name="blue_dark">#ff263e62</color>
+    <color name="color_green">#ffa5cb39</color>
+    <color name="color_1">#4BBB82</color>
+     <color name="color_2">#23945A</color>
+      <color name="color_3">#009CCD</color>
+     <color name="color_4">#8C8C83</color>
+      <color name="color_5">#B7A273</color>
+     <color name="color_6">#8D5E37</color>
+    <item type="color" name="header_title_text">@color/white</item>
+    <color name="header_title_shadow">#ff284b59</color>
+    <item type="color" name="footer_text">@color/gray_medium</item>
+    <item type="color" name="footer_text_focus">@color/white</item>
+    <item type="color" name="content_title_text">@color/black</item>
+    <item type="color" name="content_dark_text">@color/black_medium</item>
+    <item type="color" name="content_medium_text">@color/gray_dark</item>
+    <item type="color" name="content_light_text">@color/gray_medium</item>
+    <item type="color" name="content_focus_text">@color/white</item>
+    <item type="color" name="content_dark_shadow">@color/black</item>
+    <item type="color" name="content_light_shadow">@color/white</item>
+    <color name="more_info_text">#ff7b8496</color>
+     <color name="color_header_bg">#ffe0dbd7</color>
+    <color name="color_white">#ffffffff</color>
+    <color name="color_black">#ff000000</color>
+    <color name="color_grey">#ff333333</color>
+    <color name="color_grey_light">#cccccc</color>
+    <color name="color_footer">#33000000</color>
+    <color name="color_light_red">#66ff0000</color>
+    <color name="color_dark_red">#ffcc0000</color>
+    <color name="color_yellow">#66ffff00</color>
+    <color name="color_brown">#ffa59231</color>
+    <color name="color_green_text">#ff006600</color>
+    <color name="color_red_text">#ffff0000</color>
+    <color name="color_yellow_text">#ffffcc00</color>
+    <color name="color_transparent">#00000000</color>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/combg">
+        <LinearLayout android:orientation="vertical" android:id="@id/header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_background"
+                android:paddingBottom="@dimen/layout_item_margin"
+                android:paddingTop="@dimen/layout_item_margin" >
+
+                <include layout="@layout/common_header_logo" />
+                <include layout="@layout/common_header_title" />
+            </RelativeLayout>
+        </LinearLayout>
+       
+
+        
+          <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/header" >
+            <LinearLayout android:layout_height="fill_parent" android:layout_width="fill_parent" android:orientation="vertical">
+                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0px" android:layout_marginTop="10.0px" android:layout_marginBottom="5.0px" android:text="@string/operation" style="@style/settingTextFont" />
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageButton android:id="@+id/gojuon_intro" android:background="@drawable/s11_row_top_xml" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0px" android:layout_marginRight="10.0px" android:soundEffectsEnabled="false" />
+                    <TextView android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0px" android:layout_marginTop="5.0px" android:layout_marginBottom="5.0px" android:text="@string/download_extra" android:layout_alignParentLeft="true" android:layout_centerInParent="true" style="@style/wordSettingTextFont" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0px" android:src="@drawable/s11_arrow" android:layout_alignParentRight="true" android:layout_centerInParent="true" />
+                </RelativeLayout>
+                  <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageButton android:id="@+id/more_apps" android:background="@drawable/s11_row_bottom_xml" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0px" android:layout_marginRight="10.0px" android:soundEffectsEnabled="false" />
+                    <TextView android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0px" android:layout_marginTop="5.0px" android:layout_marginBottom="5.0px" android:text="@string/more_apps" android:layout_alignParentLeft="true" android:layout_centerInParent="true" style="@style/wordSettingTextFont" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0px" android:src="@drawable/s11_arrow" android:layout_alignParentRight="true" android:layout_centerInParent="true" />
+                </RelativeLayout>
+              <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0px" android:layout_marginTop="10.0px" android:layout_marginBottom="5.0px" android:text="@string/read" style="@style/settingTextFont" />
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageButton android:id="@+id/about_this_app" android:background="@drawable/s11_row_top_xml" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0px" android:layout_marginRight="10.0px" android:soundEffectsEnabled="false" />
+                    <TextView android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0px" android:layout_marginTop="5.0px" android:layout_marginBottom="5.0px" android:text="@string/builtindb" android:layout_alignParentLeft="true" android:layout_centerInParent="true" style="@style/wordSettingTextFont" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0px" android:src="@drawable/s11_arrow" android:layout_alignParentRight="true" android:layout_centerInParent="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageButton android:id="@+id/feedback" android:background="@drawable/s11_row_midlle_xml" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.0px" android:layout_marginRight="10.0px" android:soundEffectsEnabled="false" />
+                    <TextView android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0px" android:layout_marginTop="5.0px" android:layout_marginBottom="5.0px" android:text="@string/userdb" android:layout_alignParentLeft="true" android:layout_centerInParent="true" style="@style/wordSettingTextFont" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0px" android:src="@drawable/s11_arrow" android:layout_alignParentRight="true" android:layout_centerInParent="true" />
+                </RelativeLayout>
+                
+                
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageButton android:id="@+id/remove_ad" android:background="@drawable/s11_row_midlle_xml" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.0px" android:layout_marginRight="10.0px" android:soundEffectsEnabled="false" />
+                    <TextView android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0px" android:layout_marginTop="5.0px" android:layout_marginBottom="5.0px" android:text="@string/remove_ad" android:layout_alignParentLeft="true" android:layout_centerInParent="true" style="@style/wordSettingTextFont" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0px" android:src="@drawable/s11_arrow" android:layout_alignParentRight="true" android:layout_centerInParent="true" />
+                </RelativeLayout>
+                
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageButton android:id="@+id/down_more" android:background="@drawable/s11_row_bottom_xml" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0px" android:layout_marginRight="10.0px" android:soundEffectsEnabled="false" />
+                    <TextView android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0px" android:layout_marginTop="5.0px" android:layout_marginBottom="5.0px" android:text="@string/wallpaper_gallery" android:layout_alignParentLeft="true" android:layout_centerInParent="true" style="@style/wordSettingTextFont" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0px" android:src="@drawable/s11_arrow" android:layout_alignParentRight="true" android:layout_centerInParent="true" />
+                </RelativeLayout>
+               
+                </LinearLayout>
+         </ScrollView>     
+    
+    <ImageView
+        android:id="@+id/imageview2"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>

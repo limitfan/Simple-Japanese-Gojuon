@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    
+    
+    
+    
+    
+    
+    <string name="drill">五十音测试</string>
+    <string name="refresh_m">刷新M币</string>
+     <string name="remove_ad">去除广告</string>
+     <string name="no_more">没有更多了!</string>
+     <string name="download">下载</string>
+     <string name="close">关闭</string>
+      <string name="play">书写</string>
+     <string name="kana_writing">假名书写</string>
+    <string name="read">关于</string>
+    <string name="builtindb">关于此应用</string>
+    <string name="userdb">反馈信息</string>
+    <string name="wallpaper_gallery">下载推荐应用</string>
+    
+      <string name="activate">去除广告</string>
+    <string name="get_coin">免费M币</string>
+        <string name="current_coin">您当前M币:</string>
+        <string name="need_extra">去除广告</string>
+         <string name="acivate_success">成功去除广告，下次启动本程序生效！</string>
+          <string name="coin_error">【注意】1,M币余额需要联网获取！\n2,下载应用后正确安装会提示"获取奖励成功"。\n3,M币余额获取有延时，多次关闭打开此对话框可以更新M值。\n4,如果觉得这个应用对你学习有帮助，多下载推荐应用能帮助作者开发更好功能以及更多相关应用。</string>
+          <string name="need_extra_detail">去除广告需要120.0M币.您可以选择免费[下载]并[安装]推荐应用的方式获得M币.</string>
+    <string name="help_manual">Q1，无法听到发音？\nA1，请确认媒体音量足够大。\nQ2，各种模式是什么意思？\nA2，顾名思义。\nQ3，如何给五十音着色以方便记忆？\nA3，长按相应的方块着色，再次长按取消。</string>
+    <string name="operation">进一步学习</string>
+    <string name="download_extra">五十音介绍</string>
+    <string name="help_title">帮助手册</string>
+    <string name="more_apps">更多应用</string>
+    <string name="help">[帮助]</string>
+    <string name="mode">模式</string>
+    <string name="menu_hira_pron">平假名发音</string>
+    <string name="menu_hira_draw">平假名笔划</string>
+    <string name="menu_hira_demo">平假名示例</string>
+    <string name="menu_kata_pron">片假名发音</string>
+    <string name="menu_kata_draw">片假名笔划</string>
+    <string name="menu_kata_demo">片假名示例</string>
+    
+    <string name="mode_hiragana_pronounce">模式[平假名发音]</string>
+    <string name="mode_hiragana_draw">模式[平假名笔划]</string>
+    <string name="mode_hiragana_demo">模式[平假名示例]</string>
+    <string name="mode_katakana_pronounce">模式[片假名发音]</string>
+    <string name="mode_katakana_draw">模式[片假名笔划]</string>
+    <string name="mode_katakana_demo">模式[片假名示例]</string>
+    
+    <string name="hello">Hello World, Main!</string>
+    <string name="app_name">简单日语五十音</string>
+     <string name="version">简单日语五十音V2.5</string>
+    <string name="app_version_name">Version 2.5</string>
+    <string name="copyright">Copyright ©2012 limitfan. All Rights Reserved.</string>
+    <string name="poweredby">UI powered by Tokyometro</string>
+    <string name="attention">注意</string>
+    <string name="back">返回</string>
+    <string name="done">完了</string>
+    <string name="mail">作者邮箱:limitfan@gmail.com</string>
+    <string name="ok">了解</string>
+    <string name="next">下1个</string>
+    <string name="previous">上1个</string>
+    <string name="title_textbook">课本</string>
+    <string name="title_trace">足迹</string>
+    <string name="title_bookmark">生词本</string>
+    <string name="title_more">更多</string>
+    <string name="more_about">关于此软件</string>
+    <string name="empty_box">清空</string>  
+       <string name="seion">清音</string>
+    <string name="dakuon">浊音</string>
+    <string name="youon">拗音</string>
+     <string name="dakuonhalf">浊音•半浊音</string>
+     <string name="kata">片假名</string>
+     <string name="hira">平假名</string>
+          <string name="exit">退出程序</string>    
+     <string name="confirm_exit">确认退出程序?</string>
+     <string name="confirm">确认</string>
+     <string name="cancel">取消</string>   
+     <string name="feedback">反馈</string>
+     <string name="intro">五十音介绍</string>
+     <string name="advanced">进阶学习</string>
+        <string name="pronounce">发音</string>
+        <string name="demo">示例单词发音</string>
+              <string name="prevwarning">前面没有了哦==!</string>
+             <string name="nextwarning">没有了哦==!</string>
+             <string name="fetch">获取音频中...</string>
+             <string name="fetch_error">发音失败，可能是无法连接网络</string>
+             
+             
+      <string name="ha">あさ (asa) --- 早上</string>
+      <string name="hi">いぬ (inu) --- 狗</string>
+      <string name="hu">うみ (umi) --- 海</string>
+      <string name="he">えき (eki) --- 车站</string>
+      <string name="ho">おかね (okane) --- 金钱</string> 
+      <string name="hka">かさ (kasa) --- 伞</string>
+      <string name="hki">きた (kita) --- 北</string>
+      <string name="hku">くるま (kuruma) --- 汽车</string>
+      <string name="hke">けむり (kemuri) --- 烟</string>
+      <string name="hko">こえ (koe) --- 声音</string>
+      <string name="hsa">さかな (sakana) --- 鱼</string>
+      <string name="hshi">しお (shio) --- 盐</string>
+      <string name="hsu">すな (suna) --- 沙子</string>     
+      <string name="hse">せかい (sekai) --- 世界</string>
+      <string name="hso">そら (sora) --- 天空</string>
+      <string name="hta">たけ (take) --- 竹子</string>
+      <string name="hchi">ちず (chizu) --- 地图</string>
+      <string name="htsu">つき (tsuki) --- 月亮</string>
+      <string name="hte">てんき　(tenki) --- 天气</string>
+      <string name="hto">とけい (tokei) --- 手表</string>
+      <string name="hna">なまえ (namae) --- 名字</string>
+      <string name="hni">にほん (nihon) --- 日本</string>
+      <string name="hnu">ぬま (numa) --- 沼泽</string>
+      <string name="hne">ねこ　(neko) --- 猫</string>
+      <string name="hno">のど (nodo) --- 喉咙</string>
+      <string name="hha">はた (hata) --- 旗</string>
+      <string name="hhi">ひかり (hikari) --- 光</string>
+      <string name="hfu">ふね (fune) --- 船</string>
+      <string name="hhe">へや　(heya) --- 房间</string>
+      <string name="hho">ほし (hoshi) --- 星星</string>
+      <string name="hma">まくら (makura) --- 枕头</string>
+      <string name="hmi">みなと (minato) --- 港口</string>
+      <string name="hmu">むし (mushi) --- 昆虫</string>
+      <string name="hme">めがね(megane) --- 眼镜</string>
+      <string name="hmo">もり (mori) --- 森林</string>
+      <string name="hya">やま (yama) --- 山</string>
+      <string name="hyu">ゆき (yuki) --- 雪</string>
+      <string name="hyo">よる (yoru) --- 晚上</string>
+      <string name="hra">らくだ (rakuda) --- 骆驼</string>
+      <string name="hri">りんご (ringo) --- 苹果</string>
+      <string name="hru">るす (rusu) --- 不在家</string>
+      <string name="hre">れきし (rekishi) --- 历史</string>
+      <string name="hro">ろうそく (rousoku) --- 蜡烛</string>
+      <string name="hwa">わに (wani) --- 鳄鱼</string>
+      <string name="hwo">无，通常用做助词。</string>
+      <string name="hn">无</string>
+      
+      
+      <string name="ka">アメリカ (amerika) --- 美国</string>
+      <string name="ki">イギリス (igirisu) --- 英国</string>
+      <string name="ku">ウクライナ (ukuraina) --- 乌克兰</string>
+      <string name="ke">エジプト (ejiputo) --- 埃及</string>
+      <string name="ko">オランダ (oranda) --- 荷兰</string> 
+      <string name="kka">カナダ (kanada) --- 加拿大</string>
+      <string name="kki">キャンプ (kyanpu) --- 露营</string>
+      <string name="kku">クイズ (kuizu) --- 测试</string>
+      <string name="kke">ケニア (kenia) --- 肯尼亚</string>
+      <string name="kko">コーヒー (koohii) --- 咖啡</string>
+      <string name="ksa">サッカー (sakkaa) --- 足球</string>
+      <string name="kshi">シャワー (shawaa) --- 淋浴</string>
+      <string name="ksu">スイス (suisu) --- 瑞士</string>     
+      <string name="kse">セーター (seetaa) --- 毛衣</string>
+      <string name="kso">ソファー (sofaa) --- 沙发</string>
+      <string name="kta">タクシー (takushii) --- 出租车</string>
+      <string name="kchi">チェス (chesu) --- 国际象棋</string>
+      <string name="ktsu"> ツアー (tsuaa) --- 旅游</string>
+      <string name="kte">テニス (tenisu) --- 网球</string>
+      <string name="kto">トマト (tomato) --- 西红柿</string>
+      <string name="kna">ナイフ (naifu) --- 小刀</string>
+      <string name="kni">ニュース (nyuusu) --- 新闻</string>
+      <string name="knu">ヌガー (nugaa) --- 牛乳糖</string>
+      <string name="kne">ネクタイ (nekutai) --- 领带</string>
+      <string name="kno">ノルウェー (noruwei) --- 挪威</string>
+      <string name="kha">ハープ (haapu) --- 竖琴</string>
+      <string name="khi">ヒント (hinto) --- 提示</string>
+      <string name="kfu">フランス (furansu) --- 法国</string>
+      <string name="khe">ヘブライ (heburai) --- 希伯来文</string>
+      <string name="kho">ホテル (hoteru) --- 旅店</string>
+      <string name="kma">マレーシア (mareeshia) --- 马兰西亚</string>
+      <string name="kmi">ミュージカル (myuuzikaru) --- 音乐舞台剧</string>
+      <string name="kmu">ムード (muudo) --- 情绪</string>
+      <string name="kme">メキシコ (mekishiko) --- 墨西哥</string>
+      <string name="kmo">モナコ (monako) --- 摩纳哥</string>
+      <string name="kya">ヤンキー (yankii) --- 美国人</string>
+      <string name="kyu">ユダヤ (yudaya) --- 犹太</string>
+      <string name="kyo">ヨーロッパ (yooroppa) --- 欧洲</string>
+      <string name="kra">ラジオ (rajio) --- 收音机</string>
+      <string name="kri">リーグ (riigu) --- 联盟</string>
+      <string name="kru">ルビー (rubii) --- 红宝石</string>
+      <string name="kre">レバノン (rebanon) ---  黎巴嫩</string>
+      <string name="kro">ロケット (roketto) --- 火箭</string>
+      <string name="kwa">ワイン (wain) --- 酒</string>
+      <string name="kwo">无</string>
+      <string name="kn"> ロンドン (rondon) --- 伦敦</string>
+     <string name="gojuuon">
+ 
+          五十音图:\n五十音图，又称五十音，是将日语的假名（平假名、片假名）以元音、子音为分类依据所排列出来的一个图表。表的纵向称为“段”，每段十个假名，共有五段。横向称为“行”，每行五个假名，共有十行。背诵五十音图是学习日语的基础。
+         \n
+   简介:\n日语的每个假名代表一个音节（拗音除外），所以属于音节字母。日语的假名共有七十一个，包括清音、浊音、半浊音和拨音。其中表示四十五个清音音节的假名，按照发音规律，可排列成表，这个假名表称为五十音图【五十音図】（ごじゅおんず）。表中，「あ」行假名代表五个元音，其他各行基本上表示辅音与元音相拼而成的音节。学习日语假名发音时，切莫与汉语拼音等同起来。一般日语工具书都是按五十音图排列，日语动词等词尾变化也跟行段密切相关。清音,假名中最基础的就是五十个清音了，称为“五十音”，不少原来想自学日语的朋友就是被它挡在了门外。你不要看它们很多，就被吓住了。其实，它们是有规律的。它们每五个一行，一共是十行。\n
+快速记忆法:\nあ アa ‘あ’看上去像是一个武术高手施展了一个扫堂腿，敌人肯定被扫得冷落花流水，啊的一声倒下去啦，所以读a。‘ア’片假名指示出了你发音的样子，嘴巴张开，舌头放到下面，a。
+　　\nい イi‘い’通汉字‘以’，也念i，所以很好记的。‘イ’呢，我每次看到它就会想起汉字‘依’，也就记住了。
+　　\nう ウu‘う’表示你发音时的样子，上嘴唇倾斜，下巴朝上撅，就发出了u。‘ウ’代表一个人，左胳膊好好的，右胳膊给生生截掉一半，他疼啊，在55的哭呢。念u。
+　　\nえ エe‘え’通汉字‘衣’，读音稍微改变了一些，成了e。‘エ’可以看成大写的英文字母I，很自然就读出e音来了。
+　　\nお オo‘お’是一个人帽子被风吹走了，他急了，嗷嗷叫着去追帽子，所以读o。‘オ’片假名像是哈里波特穿上了一件魔法斗篷在空中飞翔，好爽啊，他激动的嗷嗷大叫。读o。
+　　\nか カka‘か’各位应该比较熟悉吧？在漫画中经常会出现这个字，表示卡卡的声音，这个假名应该记起来不难，再说，力量给人的感觉就是干净利索的，发ka也让人感到有力。‘カ’跟‘か’很接近，书写正规些而已，容易记，ka。
+　　\nき キki‘き’是一把刀子在刻东西，已经刻了一点了，刻就是ki了。‘キ’只剩下刀子了，但也是刻，ki。
+　　\nく クku‘く’很容易记，你把嘴的角度调整成‘く’的样子，是不是自然而然就发出了ku音呢？‘ク’是一只没有眼珠眼睛（是侧面图，片假名‘タ’是有眼珠的眼睛），为什么看不到眼珠呢？因为她在哭，念ku。
+　　\nけ ケke’け’是一扇门，门锁被打开了，门自然就开了，读ke。‘ケ’片假名是眼睛，但明显要比‘ク’大，因为眼睛张开了，（眼珠呢？可能张太大掉了），读ke。
+　　\nこ コko‘こ’是你读ko时的嘴型，嘴分得很开。‘コ’也是嘴型，只不过方向变了一下，嘴分开，大声念，ko。
+　　\nさ サsa‘さ’通‘杀’，仔细看的话，像一把匕首刺入了一个人的脖子，杀人啦，所以是sa。‘サ’也是在杀人，左边的一竖是一个人，右边的一竖是他手中的弓，那一横表示他在开弓放箭，还是杀人，读sa。
+　　\nし シsi‘し’这个平假名像是一只喝饮料的吸管，所以念xi。‘シ’这个片假名要跟后面那个‘ミ（mi）’结合起来记忆，合起来不就是米西吗。米西之前，眼儿眯着，嘴儿抿着，就是‘ミ’这个样子，开始米西了，瞪着眼，伸直了胳膊去抢，就成了‘シ’。
+　　\nす スsu’す’ 这个平假名看起来像挂在竹竿上的丝线，所以念si。’ス’呢，是晾晒完毕的丝线开始加工了，两股合为一股，所以也是si。
+　　\nせ セse‘せ’这个平假名是一只手在往口袋里面塞东西呢，念se。塞呀塞，塞进去了，好了，就成了‘セ’了。
+　　\nそ ソso‘そ’这个平假名，讲了一个女人不守妇道的故事，这个女人啊，很不像话，下面露着肚子，上面露出她尖尖的小奶，好不风骚，所以念so。‘ソ’这个片假名我是很犯难的，它跟后面的‘ン’很像，容易搞混，所以最好把它看做英文字母‘y’，因为‘そ’是比较骚的，所以你不得不对她yy啦。记住了，读so。
+　　\nた タta‘た’这个平假名通汉字‘他’，读ta。‘タ’呢，是一只眼睛，还有黑眼珠，你自己肯定不能从侧面看到你的眼睛啦，肯定是看他人的时候啦。所以这不是你的眼睛，是ta。
+　　\nち チti‘ち’这个平假名很像是七，虽然下面多了一些零碎，但也是七，你把它看成七就成了，很好记，读音是qi。‘チ’看起来不像七了，倒像是千，没关系，千的发音也很像qi。
+　　\nつ ツtu‘つ’是日语中的促音，是很常见的，促音的发音也是tsu，很容易记。‘ツ’是你发音时的样子，两个鼻孔张开，嘴成一条缝，蛮形象的。
+　　\nて テ te ‘て’这个平假名引人注目的是下面那个半圆，像什么呢？像是孕妇的大肚子，看来是怀胎了，所以读te。‘テ’呢，说明这个人重男轻女，一开始生了个女孩，不满意，又要了第二胎，二表示是二胎，下面那个小东西说明生了个带把儿的，这下满意啦？记住读te。
+　　\nと トto‘と’是一个男人正跪在那里费力的脱裤子，所以读to。‘ト’呢，很明显，裤子脱掉了，男人还很没羞的站了起来，就成这个样子了。总之都是to。
+　　\nな ナna‘な’这个平假名不太好写，但是记起来却不难。仔细看，上面的十字和点中间形成了一个小缺口，下面的那个东西好像一个人在指向那个缺口，想像一下警匪片中，警察追捕坏人，但是拐了一个弯儿坏人不见了，一个警察扫视了一下周围的环境，发现了一个缺口，伸手一指，大声说：长官，哪儿！所以这个假名就读na 了，我这么记，记得很牢固。再看‘ナ’，这个片假名左看右看都少了点东西，要是再多个捺就好了，可惜了一个大字。少什么你就念什么就可以了，所以就念na 了。
+　　\nに 二 ni 因为‘二’通汉字‘尔’，也就是你的意思，所以‘に’这个平假名看主体就是表示你，所以读ni。‘二’更明显了，明显就是ni嘛。
+　　\nぬ ヌnu‘ぬ’通汉字‘奴’，非常好记，读nu。‘ヌ’呢，是对劳动中的奴隶的一只胳膊的特写，请注意看，胳膊上还带着手铐，唉，悲惨的奴隶。
+　　\nね ネne‘ね’的左边是一个小孩，瘦小柔弱，右边是妈**乳房（下垂扁平而又大头），母亲在奶自己的孩子，是nai。‘ネ’呢，大家看，孩子已经长大了，成了顶天立地的男子汉了，他的母亲已经苍凉，mimi已经成为了干瘪的一点。一个感人的故事，关于nai的故事。
+　　\nの ノno‘の’这个假名我不想多讲了，这个是极其常见的一个日语假名，是‘的’的意思，读音是no，这个不用刻意去记也记住了。‘ノ’是‘の’的一个简写，只保留了‘の’的第一笔，也挺好记的，不啰嗦了。
+　　\nは ハha‘は’这个平假名左边是一个人在翩翩起舞，右边是站成一条线的围观的人，有人跳舞给大家看，大家当然高兴啦，每个人都笑哈哈。读ha。‘ハ’呢，请尽量去联系汉字‘哈’来记，‘ハ’相当于哈的右上部分，请多多联系。
+　　\nひ ヒhi‘ひ’是一个人在微笑的笑脸，虽然有些夸张，但还是能看出是在：）来，笑的有点大，所以出声了，嘿嘿的笑，读hi。‘ヒ’呢是一把匕首，这把匕首能让你白刀子进去黑刀子出来，为什么是黑刀子呢？因为在这里写字不具有彩色功能，没办法，只好黑刀子啦。这把刀子现在已经黑啦，就读hi。
+　　\nふ フhu‘ふ’充分展现了一个大丈夫的形象，就是上面的大头很小，下面的小头却很大，哈哈，好猛啊，是个大丈夫。读fu。‘フ’说明大丈夫在家里却没什么了不起，见了太太照样要低三下四，还要卑躬屈膝，好惨啊。‘フ’是大丈夫在下跪呢。
+　　\nへ へhe‘へ’这个平假名让人想起了大海上的波涛，读he。片假名‘へ’与平假名极其相似，这个记起来就容易多了。
+　　\nほ ホho‘ほ’呢，还是大家在看一个人在跳舞，不过这次舞者在头上顶了一个盘子跳，这可是真功夫，有水平，大家都给她叫好，所以你见了也要叫ho。过了一会儿，跳舞的姑娘旋转起来，裙子都像伞一样撑开了，成了‘ホ’，好精彩啊，你还不叫好？
+　　\nま マma‘ま’通‘马’，是一个人骑在马背上的俯视图，读ma。‘マ’是‘马’的缩写，写完第一笔后，其余的缩成一个点，但还是个马。
+　　\nみ ミmi‘み’这个假名看起来乱七八糟的，其实不然，你要善于抓住重点。看仔细了，左边那个小圈，还有点下垂，明显是一个大头的mimi嘛（汗，这样的mimi也太有特色了），忍忍吧，为了记住这个假名，它就是个大mimi啦，读mi。‘ミ’这个片假名要跟前面那个‘シ（xi）’结合起来记忆，合起来不就是米西吗。米西之前，眼儿眯着，嘴儿抿着，就是‘ミ’这个样子，开始米西了，瞪着眼，伸直了胳膊去抢，就成了‘シ’。
+　　\nむ ムmu‘む’像一头牛，正在mu，mu叫着呢。‘ム’呢，是牟的一部分，二者联系起来的话，很容易记住。读mu。
+　　\nめ メme‘め’很像‘女’字，而‘メ’像是一把匕首，你想想用刀子逼迫一个女人还能干什么呢？当然是拿去让她卖啦，所以读me。
+　　\nも モmo‘も’一眼看上去就像是汉字‘毛’，日本人为了不让别人说他一毛不拔，就狠狠心拔了一毛，成了现在这个样子，很好记，你看成毛就可以了。‘モ’写得更正规了一些，更像毛了，读音也是mo。
+　　\nや ヤya 以前网上有个帖子，讨论用马桶大便的时候如何压水花的问题，日本人在这里给出了解释。你看‘や’，坐在马桶上，便便已经快落进去了，但是水花没有压好，溅出来了一点，好臭啊，没压好。而‘ヤ’就很棒，一点都没有水花，因为坐得靠前了嘛。这就是ya。
+　　\nゆ ユyu‘ゆ’在我看来就是一个幼女的‘幼’的草写，一看到它，就是yu了。‘ユ’呢，很明显是一只手，四指握拳，大拇指朝右，给你指方向呢。读yu。
+　　\nよ ヨyo‘よ’这个假名我看了一眼就记住了，因为它的样子就像一把钥匙，读yo就很自然了。‘ヨ’呢，是所有假名里面含数字‘1（读yao）’最多的一个假名，横竖加起来有4个1，自然，由1组成的‘ヨ’也就读yo啦。
+　　\nら ラra‘ら’这个假名相当好笑，你看那个人低着头蹲那儿在干什么呢？拉屎呗，那这个假名就是la了。‘ラ’也相当好记，拉完了，人走了，只剩下了马桶，而且马桶盖也盖上了，这个是拉完了的la。
+　　\nり リri‘り’也是一个容易记忆的假名，两个人立在哪儿，自然就是li了。‘リ’立得更直一些了，反正都是li。
+　　\nる ルru‘る’表示的是发音时的口型，先发‘L’音，此时你的舌头是向上翘的，‘る’的上半部分就是代表向上的舌头，下面是一个大圈加一个小圈，代表你发’U’音的时候，你的口型由大变小。所以你看到‘る’这个假名，自然而然就把它读出来了。‘ル’呢，是写得比较夸张的‘LU’，也是表示出了读音，lu。
+　　\nれ レre‘れ’我看着像礼品的‘礼’，当有人提着礼品来了，你肯定会迫不及待地冲人家喊，来来来，所以见了礼，你就喊le就行了。刚才是别人拿着礼，现在这个‘レ’是你看到礼来了的表现，你仰着脖子，大喊，来—————
+　　\nろ ロ lo ‘ろ’也是发音时的口型，上面是发‘L’时的口型，下面嘴大张着，这是在发‘O’呢，所以一看到‘ろ’你就张嘴发lo。‘ロ’呢，是用两个‘L’组成了发音时的口型，很自然就发出了lo音了。
+　　\nわ ワwa 这个假名念wa，一般人在惊讶的情况下才会哇的一声，这里也是这个样子。‘わ’表示一位亭亭玉立的少女，突然裙子被大风给卷起来了，你看了不替她着急吗？一急就wa的一声叫出来了。‘ワ’看上去是一张大张着的嘴，右边那一竖是一串黄鼻涕，快进到嘴里去啦。wa！
+　　\nを ヲwo‘を’这个假名呢，代表比较刺激的事情，才会嗷嗷叫。‘を’好像一个人去游泳，先把一只脚放到水池里试一试水温，wa，好凉。（其实把‘を’看成体位的话会更生动啦）。‘ヲ’呢，你有办法把它想成体位也可以啦，如果不能，你就可以把它看成一个人在滑雪或冲浪，正在腾空而起，好刺激。所以读o。
+　　\nん ンn‘ん’很像字母‘n’，只不过头上长了一些，你把它当成n就记住了。‘ン’呢，又是一个发音表情，上边一点表示鼻子，下面一画表示闭着的嘴，怎么样？你发n的时候是不是这个样子呢？这个假名轻读n。
+     </string>
+     <string name="osusume"><big>动漫日语100句</big>:\n本应用收集了最常用的100句动漫中的日语，详细说明了其使用方法，每一句都有原声的动漫配音，帮助你快速掌握动漫中出现的常用语句，提高日语水平，增强国际视野(^_^)。
+         \n\n泛日语学习:\n本应用收集了新版中日交流标准日本语初级上下册，中级上下册的所有单词和初级上下册的每一课的重要语法点，又有基础句型和新闻热词栏目，
+可以全方面学习日语的知识点和单词。并配有生词本模块和足迹记录模块，方便用户记录课程中的重点单词和所学课程进展。\n\n上面两款日语学习应用均可以在各大应用市场或者搜索引擎中检索到,欢迎提出建议。</string>
+</resources>

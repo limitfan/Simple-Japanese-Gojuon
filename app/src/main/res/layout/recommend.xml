@@ -1,0 +1,26 @@
+
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/combg">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+            <RelativeLayout android:background="@drawable/header_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+               <include layout="@layout/common_header_back" />
+                 <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                    <include layout="@layout/common_header_title" />
+                </FrameLayout>
+            </RelativeLayout>
+        </LinearLayout>
+       
+
+       <ScrollView android:id="@id/grammertext" android:layout_height="fill_parent" android:layout_width="fill_parent" android:background="@drawable/box" android:layout_below="@id/header" android:layout_margin="5.0dip" > 
+           <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+           <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/appIntroOne" android:lineSpacingMultiplier="1.2" android:paddingRight="5.0px" android:textSize="18.0dip" android:text="@string/osusumeOne"/> 
+          
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/downfirst" android:text="@string/download" android:background="@drawable/header_button_selector" android:layout_below="@id/appIntroOne" android:layout_centerHorizontal="true"/>
+            <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/appIntroTwo" android:lineSpacingMultiplier="1.2" android:paddingRight="5.0px" android:textSize="18.0dip" android:text="@string/osusumeTwo" android:layout_below="@id/downfirst"/>
+           
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/downTwo" android:text="@string/download" android:background="@drawable/header_button_selector" android:layout_below="@id/appIntroTwo" android:layout_centerHorizontal="true"/>
+           </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</LinearLayout>

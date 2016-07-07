@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" >
+  <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+      <LinearLayout android:orientation="vertical" android:id="@id/header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+            <RelativeLayout android:background="@drawable/header_background" android:paddingTop="@dimen/layout_item_margin" android:paddingBottom="@dimen/layout_item_margin" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <include layout="@layout/common_header_logo" />
+                <include layout="@layout/common_header_title" />
+                 <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/layout_item_margin" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                    <include layout="@layout/common_header_button" />
+                </FrameLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        
+      
+       <LinearLayout
+         android:id="@+id/mode"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/header"
+         android:background="@drawable/station_info_exit_heading"
+         android:orientation="horizontal" >
+
+         <TextView
+             android:id="@+id/modeName"
+             style="@style/testHeaderTextFont"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             
+             android:text="@string/mode_hiragana_pronounce" />
+    
+       </LinearLayout>
+       
+        <include layout="@layout/guohead"  android:id="@+id/ad" android:layout_below="@id/mode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true"/>
+    <ScrollView android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/kanaSV" android:layout_below="@id/ad" > 
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="vertical" 
+    android:id="@+id/kana"/>
+  </ScrollView>
+  </RelativeLayout>
+</LinearLayout>

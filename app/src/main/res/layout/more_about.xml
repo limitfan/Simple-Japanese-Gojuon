@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/combg">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+            <RelativeLayout android:background="@drawable/header_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <include layout="@layout/common_header_title" />
+                <include layout="@layout/common_header_back" />
+            </RelativeLayout>
+        </LinearLayout>
+         
+		<LinearLayout
+		    android:id="@+id/frame"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="2px"
+			android:background="#FFF"
+			android:layout_centerHorizontal="true"
+			android:layout_below="@id/header">
+			<org.andengine.opengl.view.RenderSurfaceView android:id="@+id/xmllayoutexample_rendersurfaceview"
+				android:layout_width="720px" 
+				android:layout_height="900px"
+				/>
+		</LinearLayout>
+        
+        <RelativeLayout android:id="@id/body" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/frame">
+             
+               <TextView android:textSize="12.0dip" android:textColor="@color/gray_medium" android:id="@+id/mail" android:layout_width="wrap_content" android:layout_height="wrap_content" 
+            android:layout_marginBottom="2.0dip" android:text="@string/mail" android:layout_above="@id/poweredby" android:layout_centerHorizontal="true" android:autoLink="email"/>
+             <TextView android:textSize="15.0dip" android:textColor="@color/gray_medium" android:id="@+id/fanriyuxuexi" android:layout_width="wrap_content" android:layout_height="wrap_content" 
+            android:layout_marginBottom="2.0dip" android:text="@string/version" android:layout_above="@id/copyright" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="11.0dip" android:textColor="@color/gray_medium" android:id="@id/copyright" android:layout_width="wrap_content" android:layout_height="wrap_content" 
+            android:layout_marginBottom="2.0dip" android:text="@string/copyright" android:layout_above="@id/mail" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="11.0dip" android:textColor="@color/gray_medium" android:id="@id/poweredby" android:layout_width="wrap_content" android:layout_height="wrap_content" 
+            android:layout_marginBottom="12.0dip" android:text="@string/poweredby" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+            <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:id="@+id/aboutlogo">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/logo" />
+            </LinearLayout>
+           
+        </RelativeLayout>
+        
+        
+        
+        
+    </RelativeLayout>
+</LinearLayout>

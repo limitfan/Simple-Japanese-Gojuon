@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/s08_wordcard_xml" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        
+       <TextView android:id="@+id/description" android:layout_width="wrap_content" android:layout_height="wrap_content" 
+           android:layout_centerInParent="true" style="@style/answerTextFont" />
+    </RelativeLayout>
+</FrameLayout>

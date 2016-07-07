@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.limitfan.gojuuon.templates.ViewFooter android:background="@drawable/footer_background" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:id="@id/dictionary" android:background="@drawable/footer_background_dicts_selector" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/footer_text" android:textColor="@drawable/footer_foreground_selector" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/seion" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:id="@id/translation" android:background="@drawable/footer_background_translation_selector" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/footer_text" android:textColor="@drawable/footer_foreground_selector" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dakuon" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:id="@id/bookmarks" android:background="@drawable/footer_background_bookmark_selector" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/footer_text" android:textColor="@drawable/footer_foreground_selector" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/youon" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:id="@id/more" android:background="@drawable/footer_background_more_selector" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/footer_text" android:textColor="@drawable/footer_foreground_selector" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/title_more" />
+    </LinearLayout>
+</com.limitfan.gojuuon.templates.ViewFooter>
