@@ -5,7 +5,7 @@
     android:versionCode="11"
     android:versionName="2.6" >
 
-    <uses-sdk android:minSdkVersion="8" />
+    <uses-sdk android:minSdkVersion="15" />
 
     <application
         android:icon="@drawable/icon"
