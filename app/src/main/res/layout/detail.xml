@@ -13,8 +13,7 @@
                 </FrameLayout>
             </RelativeLayout>
         </LinearLayout>
-       <include layout="@layout/guohead"  android:id="@+id/ad" android:layout_below="@id/header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true"/>
-        <ImageView android:id="@+id/stroke" android:layout_width="320dip" android:layout_height="113dip" android:layout_below="@id/ad" android:layout_centerHorizontal="true"/>
+        <ImageView android:id="@+id/stroke" android:layout_width="320dip" android:layout_height="113dip" android:layout_below="@id/header" android:layout_centerHorizontal="true"/>
         <TextView android:id="@+id/sample" android:textSize="20dip" android:layout_width="fill_parent"  android:layout_height="wrap_content" android:layout_below="@id/stroke"></TextView>
        
         <LinearLayout android:orientation="vertical" android:id="@id/list" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/sample" />

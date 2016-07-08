@@ -1,21 +1,5 @@
 package com.limitfan.gojuuon.acts;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.util.Vector;
-
-import net.londatiga.android.ActionItem;
-import net.londatiga.android.QuickAction;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -55,11 +39,27 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.guohead.sdk.GHView;
 import com.limitfan.gojuuon.R;
 import com.limitfan.gojuuon.utils.Common;
 import com.limitfan.gojuuon.utils.StrokeUtil;
 import com.umeng.analytics.MobclickAgent;
+
+import net.londatiga.android.ActionItem;
+import net.londatiga.android.QuickAction;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.Vector;
 
 public class ActKana extends Activity {
 	
@@ -242,7 +242,6 @@ public class ActKana extends Activity {
     	if(!file.exists())
     		file.mkdir();
     }
-	GHView ghView_1;
 	public void onCreate(Bundle paramBundle)
 	{
 		// System.out.println("ActMore:Here!!!!");
@@ -261,11 +260,6 @@ public class ActKana extends Activity {
 		mkdir();
 		if(this.isUnlocked()==1)
 			showAd=false;
-		if(showAd){
-		ghView_1 = (GHView) findViewById(R.id.mGHView_1);
-		ghView_1.setAdUnitId("61107e87689d78ce2efcd8f8ef62eb77");//设置广告位ID 
-		ghView_1.startLoadAd();//请求广告
-		}
 
 		ViewGroup listView = (ViewGroup)findViewById(R.id.list); //More Lists
 		ViewGroup demo_speak = (ViewGroup)getLayoutInflater().inflate(R.layout.demo_list_item, null);
@@ -726,8 +720,6 @@ public class ActKana extends Activity {
 
 	public void onDestroy(){
 		super.onDestroy();
-		if(showAd)
-		ghView_1.destroy();
 	}
 
 

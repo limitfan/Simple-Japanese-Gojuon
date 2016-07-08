@@ -7,23 +7,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.graphics.Rect;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.limitfan.gojuuon.R;
-import com.limitfan.gojuuon.utils.Common;
-import com.nd.dianjin.DianJinPlatform;
-import com.nd.dianjin.DianJinPlatform.Oriention;
-import com.nd.dianjin.webservice.WebServiceListener;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.fb.UMFeedbackService;
 import com.umeng.xp.common.ExchangeConstants;
@@ -36,24 +29,7 @@ public class ActMore extends Activity {
 	 
 	 String ret="【获取余额失败，请重新打开本对话框】";
 	 public String getBalance(){
-	           
-			   DianJinPlatform.getBalance(ActMore.this,
-						new WebServiceListener<Float>() {
 
-							@Override
-							public void onResponse(int responseCode, Float t) {
-								switch (responseCode) {
-								case DianJinPlatform.DIANJIN_SUCCESS:
-								    ret=String.valueOf(t);
-									break;
-								case DianJinPlatform.DIANJIN_ERROR:
-									
-									break;
-								default:
-								
-								}
-							}
-						});
 			   return ret;
 	
 	 }
@@ -79,10 +55,7 @@ public class ActMore extends Activity {
 		ExchangeViewManager viewManager = new ExchangeViewManager(this, exchangeDataService2);
 		viewManager.addView(ExchangeConstants.type_list_curtain, imageview2,this.getResources().getDrawable(R.drawable.umeng_xp_handler_rc));
 	    
-	    
-	    
-	    DianJinPlatform.initialize(this, Common.APPID,
-	    Common.APPKEY);
+
 	    TextView title=(TextView)findViewById(R.id.title);	    
 	    title.setText(R.string.title_more);
 	    
@@ -162,9 +135,6 @@ public class ActMore extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-			//	MobclickAgent.openFeedbackActivity(ActMoreAbout.this);
-				//UMFeedbackService.openUmengFeedbackSDK(ActMore.this);
-				DianJinPlatform.showOfferWall(ActMore.this,Oriention.PORTRAIT);
 			}
 	    	
 	    	
@@ -187,9 +157,6 @@ public class ActMore extends Activity {
 				.setMessage(detail+"\n"+me+balance+"\n"+chuui).
 				setNeutralButton(R.string.get_coin, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which){
-						
-				
-				    	DianJinPlatform.showOfferWall(ActMore.this,Oriention.PORTRAIT);
 						//new WallThread().start();
 					}
 				})
@@ -198,52 +165,6 @@ public class ActMore extends Activity {
 						Toast.makeText(ActMore.this,
 								R.string.processing,
 								Toast.LENGTH_SHORT).show();
-						DianJinPlatform.consume(ActMore.this, Common.MNUM, new WebServiceListener<Integer>() {
-
-									@Override
-									public void onResponse(int responseCode, Integer t) {
-										switch (responseCode) {
-										case DianJinPlatform.DIANJIN_SUCCESS:
-											Toast.makeText(ActMore.this,
-													R.string.acivate_success,
-													Toast.LENGTH_SHORT).show();
-									         unlock();
-											break;
-										case DianJinPlatform.DIANJIN_ERROR_REQUES_CONSUNE:
-											Toast.makeText(ActMore.this, "支付请求失败",
-													Toast.LENGTH_SHORT).show();
-											break;
-										case DianJinPlatform.DIANJIN_ERROR_BALANCE_NO_ENOUGH:
-											Toast.makeText(ActMore.this, "余额不足",
-													Toast.LENGTH_SHORT).show();
-											break;
-										case DianJinPlatform.DIANJIN_ERROR_ACCOUNT_NO_EXIST:
-											Toast.makeText(ActMore.this, "账号不存在",
-													Toast.LENGTH_SHORT).show();
-											break;
-										case DianJinPlatform.DIANJIN_ERROR_ORDER_SERIAL_REPEAT:
-											Toast.makeText(ActMore.this, "订单号重复",
-													Toast.LENGTH_SHORT).show();
-											break;
-										case DianJinPlatform.DIANJIN_ERROR_BEYOND_LARGEST_AMOUNT:
-											Toast.makeText(ActMore.this,
-													"一次性交易金额超过最大限定金额",
-													Toast.LENGTH_SHORT).show();
-											break;
-										case DianJinPlatform.DIANJIN_RETURN_CONSUME_ID_NO_EXIST:
-											Toast.makeText(ActMore.this,
-													"不存在该类型的消费动作ID", Toast.LENGTH_SHORT)
-													.show();
-											break;
-										default:
-											Toast.makeText(
-													ActMore.this,
-												"未知错误"
-															+ responseCode,
-													Toast.LENGTH_SHORT).show();
-										}
-									}
-								});
 						//new WallThread().start();
 					}
 				}).setNegativeButton(R.string.confirm,
@@ -306,7 +227,6 @@ public class ActMore extends Activity {
 		}
 		 public void onDestroy(){
 			 super.onDestroy();
-			 DianJinPlatform.destroy();
 		 }
 			public int isUnlocked(){
 				SharedPreferences sp=this.getSharedPreferences("key", Context.MODE_PRIVATE);

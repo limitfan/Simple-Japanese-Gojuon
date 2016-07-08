@@ -19,10 +19,5 @@ android {
 }
 
 dependencies {
-    compile files('libs/GoogleAdMobAdsSdk-6.0.1.jar')
-    compile files('libs/adwosdk2.5.1.jar')
-    compile files('libs/dianjin.jar')
-    compile files('libs/domob_android_sdk-3.0.2.jar')
-    compile files('libs/guohead1.2.9.jar')
     compile files('libs/umeng_sdk.jar')
 }

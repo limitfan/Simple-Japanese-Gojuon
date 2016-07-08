@@ -1,10 +1,4 @@
 package com.limitfan.gojuuon.acts;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Vector;
-
-import net.londatiga.android.ActionItem;
-import net.londatiga.android.QuickAction;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -51,9 +45,12 @@ import com.umeng.analytics.MobclickAgent;
 import com.umeng.fb.NotificationType;
 import com.umeng.fb.UMFeedbackService;
 import com.umeng.update.UmengUpdateAgent;
-import com.umeng.xp.common.ExchangeConstants;
-import com.umeng.xp.controller.ExchangeDataService;
-import com.umeng.xp.view.ExchangeViewManager;
+
+import net.londatiga.android.ActionItem;
+import net.londatiga.android.QuickAction;
+
+import java.util.HashMap;
+import java.util.Vector;
 
 public class ActSeion extends Activity implements OnLoadCompleteListener {
 	LinearLayout table;
@@ -255,10 +252,9 @@ public class ActSeion extends Activity implements OnLoadCompleteListener {
 
 
                     isExit=true;
-				//new WallThread().start();
 			}
 		})
-		.create();  //�����Ի���
+		.create();
 
 
 
@@ -378,10 +374,10 @@ public class ActSeion extends Activity implements OnLoadCompleteListener {
 		showAd=false;	
 		}
 		if(showAd){
-			ExchangeConstants.ONLY_CHINESE=false;
-			ExchangeDataService service = new ExchangeDataService();
-			ExchangeViewManager viewMgr = new ExchangeViewManager(this, service);
-			viewMgr.addView(parent, ExchangeConstants.type_standalone_handler);
+//			ExchangeConstants.ONLY_CHINESE=false;
+//			ExchangeDataService service = new ExchangeDataService();
+//			ExchangeViewManager viewMgr = new ExchangeViewManager(this, service);
+//			viewMgr.addView(parent, ExchangeConstants.type_standalone_handler);
 		}
 		
 		quickAction = new QuickAction(this, QuickAction.VERTICAL);

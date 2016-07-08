@@ -1,10 +1,4 @@
 package com.limitfan.gojuuon.acts;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Vector;
-
-import net.londatiga.android.ActionItem;
-import net.londatiga.android.QuickAction;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -25,11 +19,15 @@ import android.view.View.OnLongClickListener;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.guohead.sdk.GHView;
 import com.limitfan.gojuuon.R;
-import com.limitfan.gojuuon.acts.ActSeion.SoundPoolThread;
 import com.limitfan.gojuuon.utils.Common;
 import com.umeng.analytics.MobclickAgent;
+
+import net.londatiga.android.ActionItem;
+import net.londatiga.android.QuickAction;
+
+import java.util.HashMap;
+import java.util.Vector;
 
 public class ActYouon extends Activity {
 	LinearLayout table;
@@ -141,7 +139,6 @@ public class ActYouon extends Activity {
 			vb.add(sp.getBoolean(String.valueOf(i), false));
 		}
 	}
-	GHView ghView_1;
 	
 	
 	HashMap<Integer,Integer> hm=new HashMap<Integer,Integer>();
@@ -173,9 +170,6 @@ public class ActYouon extends Activity {
 	    if(this.isUnlocked()==1)
 	    	showAd=false;
 	    if(showAd){
-		ghView_1 = (GHView) findViewById(R.id.mGHView_1);
-		ghView_1.setAdUnitId("61107e87689d78ce2efcd8f8ef62eb77");//���ù��λID 
-		ghView_1.startLoadAd();//������
 	    }
 	    modeName=(TextView)findViewById(R.id.modeName);
 	    
@@ -370,8 +364,6 @@ public class ActYouon extends Activity {
 	 }
 	 public void onDestroy(){
 		 super.onDestroy();
-		 if(showAd)
-			ghView_1.destroy();
 	 }
 		public int isUnlocked(){
 			SharedPreferences sp=this.getSharedPreferences("key", Context.MODE_PRIVATE);

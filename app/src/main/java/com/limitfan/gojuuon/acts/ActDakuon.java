@@ -1,10 +1,4 @@
 package com.limitfan.gojuuon.acts;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Vector;
-
-import net.londatiga.android.ActionItem;
-import net.londatiga.android.QuickAction;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -40,12 +34,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.guohead.sdk.GHView;
 import com.limitfan.gojuuon.R;
-import com.limitfan.gojuuon.acts.ActSeion.SoundPoolThread;
 import com.limitfan.gojuuon.utils.Common;
 import com.limitfan.gojuuon.utils.StrokeUtil;
 import com.umeng.analytics.MobclickAgent;
+
+import net.londatiga.android.ActionItem;
+import net.londatiga.android.QuickAction;
+
+import java.util.HashMap;
+import java.util.Vector;
 
 public class ActDakuon extends Activity {
 	LinearLayout table;
@@ -273,7 +271,6 @@ public class ActDakuon extends Activity {
 			vb.add(sp.getBoolean(String.valueOf(i), false));
 		}
 	}
-	GHView ghView_1;
 	
 	 
 		HashMap<Integer,Integer> hm=new HashMap<Integer,Integer>();
@@ -303,11 +300,6 @@ public class ActDakuon extends Activity {
 		
 		if(isUnlocked()==1){
 		showAd=false;
-		}
-		if(showAd){
-		ghView_1 = (GHView) findViewById(R.id.mGHView_1);
-		ghView_1.setAdUnitId("61107e87689d78ce2efcd8f8ef62eb77");//
-		ghView_1.startLoadAd();//
 		}
 		modeName=(TextView)findViewById(R.id.modeName);
 		quickAction = new QuickAction(this, QuickAction.VERTICAL);
@@ -521,7 +513,6 @@ class ColorListener implements OnLongClickListener{
 	public void onDestroy(){
 		super.onDestroy();
 		if(showAd){
-		ghView_1.destroy();
 		}
 	}
 
