@@ -12,8 +12,8 @@
         </LinearLayout>
        
 
-       <ScrollView android:id="@id/grammertext" android:layout_height="fill_parent" android:layout_width="fill_parent" android:background="@drawable/box" android:layout_below="@id/header" android:layout_margin="5.0dip" > 
-           <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@id/grammer" android:lineSpacingMultiplier="1.2" android:paddingRight="5.0px" android:textSize="18.0dip"/> 
+       <ScrollView android:id="@id/grammertext" android:layout_height="fill_parent" android:layout_width="fill_parent" android:background="@drawable/box" android:layout_below="@id/header" android:layout_margin="5.0dip" >
+           <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@id/grammer" android:lineSpacingMultiplier="1.2" android:paddingRight="5.0px" android:textSize="18.0dip"/>
         </ScrollView>
     </RelativeLayout>
 </LinearLayout>

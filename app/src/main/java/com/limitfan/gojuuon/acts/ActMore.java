@@ -51,9 +51,9 @@ public class ActMore extends Activity {
 	    
 	    
 	    exchangeDataService2 = new ExchangeDataService();
-		ImageView imageview2 = (ImageView)findViewById(R.id.imageview2);
-		ExchangeViewManager viewManager = new ExchangeViewManager(this, exchangeDataService2);
-		viewManager.addView(ExchangeConstants.type_list_curtain, imageview2,this.getResources().getDrawable(R.drawable.umeng_xp_handler_rc));
+//		ImageView imageview2 = (ImageView)findViewById(R.id.imageview2);
+//		ExchangeViewManager viewManager = new ExchangeViewManager(this, exchangeDataService2);
+//		viewManager.addView(ExchangeConstants.type_list_curtain, imageview2,this.getResources().getDrawable(R.drawable.umeng_xp_handler_rc));
 	    
 
 	    TextView title=(TextView)findViewById(R.id.title);	    

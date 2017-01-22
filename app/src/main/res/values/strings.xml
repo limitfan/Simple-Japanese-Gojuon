@@ -35,6 +35,9 @@
     <string name="operation">Further Reading</string>
     <string name="download_extra">Introduction to Gojuon</string>
     <string name="help_title">Help Manual</string>
+
+    <string name = "tipTitle">功能提示</string>
+    <string name = "tipContent">左右滑动内容区域可以完成界面切换。</string>
     
     <string name="help">[Help]</string>
     <string name="mode">Mode</string>
@@ -194,7 +197,8 @@ It is named for the 5×10 grid in which the characters are displayed, but the gr
 The gojūon contains all the basic kana, but it does not include:
 versions of kana with a dakuten such as が or だ, or kana with handakuten such as ぱ or ぷ,
 smaller kana, such as the sokuon (っ) or yōon (ゃ,ゅ,ょ).
-The gojūon order is the prevalent system for collating Japanese in Japan. For example, dictionaries are ordered using this method. Other systems used are the iroha ordering, and, for kanji, the radical ordering.</string>
+The gojūon order is the prevalent system for collating Japanese in Japan. For example, dictionaries are ordered using this method. Other systems used are the iroha ordering, and, for kanji, the radical ordering.
+</string>
     <string name="osusumeOne"><big>Anime Japanese 100</big>:\n[This app is in Chinese.]本应用收集了最常用的100句动漫中的日语，详细说明了其使用方法，每一句都有原声的动漫配音，帮助你快速掌握动漫中出现的常用语句，提高日语水平，增强国际视野(^_^)。
        </string>
    <string name="osusumeTwo">

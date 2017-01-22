@@ -39,6 +39,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.limitfan.gojuuon.R;
+import com.limitfan.gojuuon.TMan;
 import com.limitfan.gojuuon.utils.Common;
 import com.limitfan.gojuuon.utils.StrokeUtil;
 import com.umeng.analytics.MobclickAgent;
@@ -435,32 +436,34 @@ public class ActSeion extends Activity implements OnLoadCompleteListener {
 		UmengUpdateAgent.update(this);
 		UMFeedbackService.enableNewReplyNotification(this, NotificationType.AlertDialog);
 
-	}
 
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if(keyCode == KeyEvent.KEYCODE_BACK) {
-			new AlertDialog.Builder(this)
-			.setTitle(R.string.exit)
-			.setMessage(R.string.confirm_exit)
-			.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
-
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					ActSeion.this.finish();
-				}
-
-			})
-			.setNegativeButton(R.string.cancel, null)
-			.show();
-
-			return true;
-		}
-		else {
-			return super.onKeyDown(keyCode, event);
-		}
 
 	}
+
+//	@Override
+//	public boolean onKeyDown(int keyCode, KeyEvent event) {
+//		if(keyCode == KeyEvent.KEYCODE_BACK) {
+//			new AlertDialog.Builder(this)
+//			.setTitle(R.string.exit)
+//			.setMessage(R.string.confirm_exit)
+//			.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+//
+//				@Override
+//				public void onClick(DialogInterface dialog, int which) {
+//					ActSeion.this.finish();
+//				}
+//
+//			})
+//			.setNegativeButton(R.string.cancel, null)
+//			.show();
+//
+//			return true;
+//		}
+//		else {
+//			return super.onKeyDown(keyCode, event);
+//		}
+//
+//	}
 
 	
 	public void invColorState(int j){
@@ -618,11 +621,22 @@ public class ActSeion extends Activity implements OnLoadCompleteListener {
 		MobclickAgent.onPause(this); 
 
 	}
-	public void onDestroy(){
+	public boolean onKeyDown(int keyCode,KeyEvent event){
+		if(keyCode == KeyEvent.KEYCODE_BACK){
+			//退出弹出
+//			TMan.getInstance(this).showExitDialog(this, new View.OnClickListener() {
+//				public void onClick(View arg0) {
+//					//释放资源
+//				}
+//			});
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+	protected void onDestroy(){
+		//关闭弹出
+		TMan.getInstance(this).colseExitDialog();
 		super.onDestroy();
 	}
-
-
 
 
 

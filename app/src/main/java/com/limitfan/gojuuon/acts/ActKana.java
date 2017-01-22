@@ -22,11 +22,20 @@ import android.graphics.Picture;
 import android.graphics.Rect;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.widget.ThemedSpinnerAdapter;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -39,8 +48,28 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ToxicBakery.viewpager.transforms.CubeOutTransformer;
+import com.google.android.exoplayer2.DefaultLoadControl;
+import com.google.android.exoplayer2.ExoPlayer;
+import com.google.android.exoplayer2.ExoPlayerFactory;
+import com.google.android.exoplayer2.LoadControl;
+import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
+import com.google.android.exoplayer2.extractor.ExtractorsFactory;
+import com.google.android.exoplayer2.source.ExtractorMediaSource;
+import com.google.android.exoplayer2.source.MediaSource;
+import com.google.android.exoplayer2.trackselection.AdaptiveVideoTrackSelection;
+import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
+import com.google.android.exoplayer2.trackselection.TrackSelection;
+import com.google.android.exoplayer2.trackselection.TrackSelector;
+import com.google.android.exoplayer2.upstream.BandwidthMeter;
+import com.google.android.exoplayer2.upstream.DataSource;
+import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
+import com.google.android.exoplayer2.util.Util;
 import com.limitfan.gojuuon.R;
 import com.limitfan.gojuuon.utils.Common;
+import com.limitfan.gojuuon.utils.ScreenSlidePageFragment;
 import com.limitfan.gojuuon.utils.StrokeUtil;
 import com.umeng.analytics.MobclickAgent;
 
@@ -48,35 +77,33 @@ import net.londatiga.android.ActionItem;
 import net.londatiga.android.QuickAction;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Vector;
 
-public class ActKana extends Activity {
+import javax.net.ssl.HttpsURLConnection;
+
+import static com.limitfan.gojuuon.utils.Common.context;
+
+public class ActKana extends FragmentActivity {
 	
 	
 	ImageView stroke;
 	LinearLayout write;
-	TextView speak,title,previous,next,sample;
+	public static TextView speak,title,previous,next,sample;
 	Button egspeak,sketch,show,action,clear;
-	String API="http://translate.google.com/translate_tts?ie=UTF-8&&tl=ja&&q=%s";
+	String API="https://api.limitfan.com/tts/query.php?lang=ja&text=%s";
 	int current=0;
-	boolean isHira=true;
+	public static boolean isHira=true;
 	String kana="";
 	String romaji="";
 	Bitmap dst; 
 	MyView myKana;
 
-	
 	int width=0,height=0;
 	int dx=0,dy=0;
 	float sx=1.0f,sy=1.0f;
@@ -104,7 +131,6 @@ public class ActKana extends Activity {
 
 	};
 
-	
 	QuickAction quickAction;
 	
 	boolean showAd=true;
@@ -123,10 +149,6 @@ public class ActKana extends Activity {
 		ActionItem eraseItem 	= new ActionItem(ID_ERASE, "Clear", getResources().getDrawable(R.drawable.menu_eraser));
 		ActionItem okItem 		= new ActionItem(ID_OK, "OK", getResources().getDrawable(R.drawable.menu_ok));
 
-		//orientation
-
-
-		//add action items into QuickAction
 		quickAction.addActionItem(nextItem);
 		quickAction.addActionItem(prevItem);
 		quickAction.addActionItem(searchItem);
@@ -167,8 +189,7 @@ public class ActKana extends Activity {
 	private MaskFilter  mEmboss;
 	private MaskFilter  mBlur;
 
-
-
+	ExoPlayer player;
 
 
 	public void alertWritePad(){
@@ -179,16 +200,10 @@ public class ActKana extends Activity {
 		setNeutralButton("Close", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which){
 
-
-
 				//new WallThread().start();
 			}
 		})
 		.create();  //创建对话框
-
-
-         
-
 		LayoutInflater li = LayoutInflater.from(ActKana.this);
 		View view = li.inflate(R.layout.sketchpad, null);
 
@@ -204,7 +219,6 @@ public class ActKana extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				quickAction.show(v);
 			}
 
@@ -213,7 +227,6 @@ public class ActKana extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				myKana.clear();
 				myKana.invalidate();
 			}
@@ -223,17 +236,11 @@ public class ActKana extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-
-				 
 				new StrokeThread().start();
 			}
 
 		});
-		alertDialog.show(); // 显示对话框	
-
-
-
+		alertDialog.show(); // 显示对话框
 	}
     public void mkdir(){
     	File file=new File(
@@ -242,14 +249,70 @@ public class ActKana extends Activity {
     	if(!file.exists())
     		file.mkdir();
     }
+
+	Handler mainHandler;
+
+	public void showTipDialog(){
+		AlertDialog alertDialog = new AlertDialog.Builder(ActKana.this)
+				.setTitle(R.string.tipTitle)
+				.setMessage(R.string.tipContent)
+				.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which){
+					}
+				}).create();
+		alertDialog.show();
+	}
+
+	public boolean isTipShown(){
+		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+		if(prefs.getBoolean("tip", false)){
+			return true;
+		}
+		else {
+			SharedPreferences.Editor editor = getPreferences(MODE_PRIVATE).edit();
+			editor.putBoolean("tip", true);
+			editor.apply();
+			return false;
+		}
+	}
+
+	/**
+	 * A simple pager adapter that represents 5 {@link ScreenSlidePageFragment} objects, in
+	 * sequence.
+	 */
+	private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+		public ScreenSlidePagerAdapter(FragmentManager fm) {
+			super(fm);
+		}
+
+		@Override
+		public Fragment getItem(int position) {
+			return ScreenSlidePageFragment.create(position);
+		}
+
+		@Override
+		public int getCount() {
+			return 46;
+		}
+	}
+
+
+	/* The pager widget, which handles animation and allows swiping horizontally to access previous
+	* and next wizard steps.
+			*/
+	private ViewPager mPager;
+
+	/**
+	 * The pager adapter, which provides the pages to the view pager widget.
+	 */
+	private PagerAdapter mPagerAdapter;
+
+
 	public void onCreate(Bundle paramBundle)
 	{
 		// System.out.println("ActMore:Here!!!!");
 		super.onCreate(paramBundle);
 
-
-		// TextView tv=new TextView(this);
-		// tv.setText("hellO");
 
 		Bundle bundle=this.getIntent().getExtras();
 		isHira=bundle.getBoolean("isHira");
@@ -257,19 +320,24 @@ public class ActKana extends Activity {
 		romaji=bundle.getString("romaji");
 		current=Common.getSeq(romaji);
 		setContentView(R.layout.detail);
+
+		mainHandler = new Handler();
+
+		BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
+		TrackSelection.Factory videoTrackSelectionFactory =
+				new AdaptiveVideoTrackSelection.Factory(bandwidthMeter);
+		TrackSelector trackSelector =
+				new DefaultTrackSelector(videoTrackSelectionFactory);
+		LoadControl loadControl = new DefaultLoadControl();
+
+	    player = ExoPlayerFactory.newSimpleInstance(this, trackSelector, loadControl);
+
+
 		mkdir();
 		if(this.isUnlocked()==1)
 			showAd=false;
 
-		ViewGroup listView = (ViewGroup)findViewById(R.id.list); //More Lists
-		ViewGroup demo_speak = (ViewGroup)getLayoutInflater().inflate(R.layout.demo_list_item, null);
-		((TextView)demo_speak.findViewById(R.id.text)).setText(R.string.demo);
-		((ImageView)demo_speak.findViewById(R.id.icon)).setImageResource(R.drawable.speak_off);
 
-		listView.addView(demo_speak);
-
-
-		demo_speak.setOnClickListener(new SpeakListener());
 
 		title=(TextView)findViewById(R.id.title);	
 		previous=(TextView)findViewById(R.id.previous);
@@ -282,65 +350,28 @@ public class ActKana extends Activity {
 		TextView back=(TextView)findViewById(R.id.back);
 		back.setOnClickListener(new BackListener());
 
-		stroke=(ImageView)findViewById(R.id.stroke);
-		//  write=(LinearLayout)findViewById(R.id.write);
 		speak=(TextView)findViewById(R.id.button);
 		speak.setText(R.string.pronounce);
-	
-		try{
-			String img="";
-			if(isHira)
-				img="kanagraph/hiragana_"+romaji+".jpg";
-			else
-				img="kanagraph/katakana_"+romaji+".jpg";
-			InputStream is=getAssets().open(img, AssetManager.ACCESS_STREAMING);
 
-			Bitmap bm=BitmapFactory.decodeStream(is);
-			//  dst=this.getWritePad(bm);
-			//  BitmapDrawable bd=new BitmapDrawable(dst);
-			//   write.setBackgroundDrawable(bd);
-			//  Toast.makeText(this, "[width:"+bm.getWidth()+"][height:"+bm.getHeight()+"]",Toast.LENGTH_SHORT).show();
-			stroke.setImageBitmap(bm);
-		}
-		catch(Exception e){
-
-		}
 
 		previous.setOnClickListener(new OnClickListener(){
-
 			@Override
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
 				previous();
 			}
 
-
-
 		});
 		next.setOnClickListener(new OnClickListener(){
-
 			@Override
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
 				next();
 			}
-
-
-
 		});
-
-
 
 		speak.setOnClickListener(new OnClickListener(){
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				//Intent intent=new Intent(About.this,Main.class);
-				//startActivity(intent);
-				//   System.out.println("back "+About.this.back.isFocused());
-				// System.out.println("back "+About.this.back.isPressed());
-				//back.setBackgroundResource(R.drawable.bg_back_on);
 				try {
 					final MediaPlayer mp=new MediaPlayer();
 					mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {//完毕事件  
@@ -350,13 +381,12 @@ public class ActKana extends Activity {
 							mp.release();  
 						}  
 					});  
-					AssetFileDescriptor descriptor=getAssets().openFd("voices/"+romaji+".wav");
+					AssetFileDescriptor descriptor=getAssets().openFd("voices/"+Common.roma[current]+".wav");
 					mp.setDataSource(descriptor.getFileDescriptor(),descriptor.getStartOffset(),descriptor.getLength());
 					descriptor.close();
 					mp.prepare();
 					mp.start();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				finally{
@@ -366,13 +396,55 @@ public class ActKana extends Activity {
 			}
 		});
 
-		sample=(TextView)(this.findViewById(R.id.sample));
+
 
 		this.setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-		setSample();
+		if(!isTipShown()){
+			showTipDialog();
+		}
+
+		// Instantiate a ViewPager and a PagerAdapter.
+		mPager = (ViewPager) findViewById(R.id.pager);
+		mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+		mPager.setAdapter(mPagerAdapter);
+		mPager.setPageTransformer(true, new CubeOutTransformer());
+		mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+			@Override
+			public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+			}
+
+			@Override
+			public void onPageSelected(int position) {
+				current = position;
+
+				if(isHira){
+					kana=Common.hira[position];
+					title.setText(ActKana.this.getString(R.string.hira)+"•"+kana);
+
+				}
+				else{
+					kana=Common.kata[position];
+					title.setText(ActKana.this.getString(R.string.kata)+"•"+kana);
+				}
+			}
+
+			@Override
+			public void onPageScrollStateChanged(int state) {
+
+			}
+		});
+		mPager.setCurrentItem(current);
+
 		//  System.out.println("sample:"+getSample());
 	}
+
+	public void speak(String s){
+		ActKana.SpeakTask st=new SpeakTask();
+		st.execute(simplify(s));
+	}
+
 	public String getSample(){
 		String txt="";
 		String ret="";
@@ -382,10 +454,6 @@ public class ActKana extends Activity {
 				txt="h"+romaji;
 			else
 				txt="k"+romaji;
-			//    InputStream is=getAssets().open(txt, AssetManager.ACCESS_STREAMING);
-			//   byte[]tmp=new byte[is.available()];
-			//   is.read(tmp);
-			//    ret=new String(tmp,0,tmp.length,"UTF-8");
 			resID=this.getResources().getIdentifier(txt, "string", "com.limitfan.gojuuon");
 			ret=this.getString(resID);
 		}
@@ -396,32 +464,7 @@ public class ActKana extends Activity {
 
 	}
 
-	public void setSample(){
 
-
-		String txt="";
-		String ret="";
-		int resID=0;
-
-		try{
-			if(isHira)
-				txt="h"+romaji;
-			else
-				txt="k"+romaji;
-			//  InputStream is=getAssets().open(txt, AssetManager.ACCESS_STREAMING);
-			//    byte[]tmp=new byte[is.available()];
-			//    is.read(tmp);
-			//ret=new String(tmp,0,tmp.length,"UTF-8");
-			resID=this.getResources().getIdentifier(txt, "string", "com.limitfan.gojuuon");
-			ret=this.getString(resID);
-		}
-		catch(Exception e){
-
-		}
-
-		sample.setText(ret);
-
-	}
 	public void next(){
 		if(current==45){
 			Toast.makeText(this,R.string.nextwarning,Toast.LENGTH_SHORT).show();
@@ -429,33 +472,8 @@ public class ActKana extends Activity {
 		}
 		else{
 			current++;
+			mPager.setCurrentItem(current);
 		}
-		if(isHira){
-			kana=Common.hira[current];
-			title.setText(this.getString(R.string.hira)+"•"+kana);
-
-		}
-		else{
-			kana=Common.kata[current];	
-			title.setText(this.getString(R.string.kata)+"•"+kana);	
-		}
-		romaji=Common.roma[current];
-
-		try{
-			String img="";
-			if(isHira)
-				img="kanagraph/hiragana_"+romaji+".jpg";
-			else
-				img="kanagraph/katakana_"+romaji+".jpg";
-			InputStream is=getAssets().open(img, AssetManager.ACCESS_STREAMING);
-
-			Bitmap bm=BitmapFactory.decodeStream(is);
-			stroke.setImageBitmap(bm);
-		}
-		catch(Exception e){
-
-		} 
-		setSample();
 	}
 
 	public void previous(){
@@ -465,67 +483,38 @@ public class ActKana extends Activity {
 		}
 		else{
 			current--;
+			mPager.setCurrentItem(current);
 		}
-		if(isHira){
-			kana=Common.hira[current];
-			title.setText(this.getString(R.string.hira)+"•"+kana);
-
-		}
-		else{
-			kana=Common.kata[current];	
-			title.setText(this.getString(R.string.kata)+"•"+kana);	
-		}
-		romaji=Common.roma[current];
-
-		try{
-			String img="";
-			if(isHira)
-				img="kanagraph/hiragana_"+romaji+".jpg";
-			else
-				img="kanagraph/katakana_"+romaji+".jpg";
-			InputStream is=getAssets().open(img, AssetManager.ACCESS_STREAMING);
-
-			Bitmap bm=BitmapFactory.decodeStream(is);
-		//	Toast.makeText(this, "[width:"+bm.getWidth()+"][height:"+bm.getHeight()+"]",Toast.LENGTH_SHORT).show();
-			stroke.setImageBitmap(bm);
-		}
-		catch(Exception e){
-
-		}
-		setSample();
 	}
 
 	class BackListener implements OnClickListener{
-
 		@Override
 		public void onClick(View v) {
-			// TODO Auto-generated method stub\
-
-			//	ActMoreAbout.this.back();
 			ActKana.this.finish();
-
 		}
-
-
 	}
-	class SpeakListener implements OnClickListener{
-		String s;
-		public SpeakListener(){
 
+
+	public String followRedirects(URL url) throws URISyntaxException {
+		HttpsURLConnection urlConnection = null;
+		try {
+			HttpsURLConnection.setFollowRedirects(true);
+			urlConnection = (HttpsURLConnection)url.openConnection();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-		@Override
-		public void onClick(View arg0){
-
-
-			this.s=getSample();
-			SpeakTask st=new SpeakTask(simplify(s));
-			st.execute(simplify(s));
+		if(urlConnection!=null) {
+			System.out.println(urlConnection.getHeaderFields().get("Location"));
+			System.out.println("audio url:"+urlConnection.getURL().toURI().toString());
+			String temp = urlConnection.getHeaderFields().get("Location").toString();
+			return "https://"+temp.substring(8, temp.length()-1);
+			// should give u the new url dynamically created by server.
 		}
-
-
-
+		else{
+			return "";
+		}
 	}
-	
+
 	boolean hasAudio(String s){
 		File file=new File(
 				Environment.getExternalStorageDirectory()
@@ -537,168 +526,90 @@ public class ActKana extends Activity {
 	MediaPlayer mpeg;
 	boolean isNoError=true;
 	class SpeakTask extends AsyncTask<String, String, String>{
-		String text;
-		public SpeakTask(String t){
-			text=t;
-		}
 		public void onPreExecute(){
-			System.out.println("text:"+text);
-			if(!hasAudio(text)){
-				Toast toast=Toast.makeText(ActKana.this, R.string.fetch,Toast.LENGTH_LONG);
-				toast.setGravity(Gravity.CENTER, 0, 0);
-				toast.show();
-				isNoError=true;
-			}
+			Toast toast=Toast.makeText(ActKana.this, R.string.fetch,Toast.LENGTH_SHORT);
+			toast.setGravity(Gravity.CENTER, 0, 0);
+			toast.show();
+			isNoError=true;
 		}
 		@Override
 		protected String doInBackground(String... params) {
-			// TODO Auto-generated method stub
-			System.out.println("prams[0]:"+params[0]);
-			if(hasAudio(params[0])){
-				try{
-				File file=new File(
-						Environment.getExternalStorageDirectory()
-								+ "/SimpleGojuon/" + params[0]+".mp3");
-				mpeg=new MediaPlayer();
-				mpeg.setDataSource(file.getAbsolutePath());
-				mpeg.prepare();
-				mpeg.start();
-				mpeg.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {//完毕事件  
-					@Override 
-					public void onCompletion(MediaPlayer arg0) {  
-						mpeg.release();  
-					}  
-				});  			
+			try{
+				String text=URLEncoder.encode(simplify(params[0]), "UTF-8");
+				String url=String.format(API, text);
+//				final MediaPlayer mpeg=new MediaPlayer();
+
+
+
+				//mpeg.setDataSource();
+				//getMainLooper().prepare();
+//				Handler mainHandler = new Handler();
+
+
+// Produces DataSource instances through which media data is loaded.
+
+				DefaultBandwidthMeter bandwidthMeter2 = new DefaultBandwidthMeter();
+				DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(ActKana.this, Util.getUserAgent(ActKana.this, "SimpleGojuuon"), bandwidthMeter2);
+// Produces Extractor instances for parsing the media data.
+				ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
+// This is the MediaSource representing the media to be played.
+
+				System.out.println("extract audio url:"+followRedirects(new URL(url)));
+				MediaSource videoSource = new ExtractorMediaSource(Uri.parse(followRedirects(new URL(url))),
+						dataSourceFactory, extractorsFactory, null, null);
+// Prepare the player with the source.
+				player.prepare(videoSource);
+				player.setPlayWhenReady(true);
+//				EMAudioPlayer player = new EMAudioPlayer(ActKana.this);
+//
+//				player.setDataSource(ActKana.this, Uri.parse());
+//				player.prepareAsync();
+//				player.start();
+//				MediaPlayer.create()
+//
+//				mpeg.setDataSource(ActKana.this, Uri.parse(followRedirects(new URL(url))));
+//				mpeg.prepareAsync();
+//				mpeg.start();
+//				mpeg.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {//完毕事件
+//					@Override
+//					public void onCompletion(MediaPlayer arg0) {
+//						mpeg.release();
+//					}
+//				});
 			}
 			catch(Exception e){
-				
-			}
-			}
-				
-			else{
-				
-				try {
-					System.out.println("http://translate.google.com/translate_tts?tl=ja&q="+URLEncoder.encode(params[0],"utf-8"));
-					URI uri = new URI(
-							"http://translate.google.com/translate_tts?tl=ja&q="+URLEncoder.encode(params[0],"utf-8"));
-
-					URL u = new URL(uri.toASCIIString());
-					// this is the name of the local file you will create
-					String targetFileName = params[0]+".mp3";
-					boolean eof = false;
-					HttpURLConnection c = (HttpURLConnection) u.openConnection();
-					c.addRequestProperty("User-Agent", "Mozilla/5.0");
-					c.setRequestMethod("GET");
-					c.setDoOutput(true);
-					c.connect();
-					FileOutputStream f = new FileOutputStream(new File(
-							Environment.getExternalStorageDirectory()
-									+ "/SimpleGojuon/" + targetFileName));
-					InputStream in = c.getInputStream();
-					byte[] buffer = new byte[1024];
-					int len1 = 0;
-					while ((len1 = in.read(buffer)) > 0) {
-						f.write(buffer, 0, len1);
-					}
-					f.close();
-					System.out.println("here");
-					File file=new File(
-							Environment.getExternalStorageDirectory()
-									+ "/SimpleGojuon/" + params[0]+".mp3");
-					mpeg=new MediaPlayer();
-					mpeg.setDataSource(file.getAbsolutePath());
-					mpeg.prepare();
-					mpeg.start();
-					mpeg.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {//完毕事件  
-						@Override 
-						public void onCompletion(MediaPlayer arg0) {  
-							mpeg.release();  
-						}  
-					});  			
-					// Toast.makeText(MainActivity.this, "finish to download",
-					// Toast.LENGTH_SHORT).show();
-				} catch (MalformedURLException e) {
-					// TODO Auto-generated catch block
-					isNoError=false;
-					e.printStackTrace();
-				} catch (ProtocolException e) {
-					// TODO Auto-generated catch block
-					isNoError=false;
-					e.printStackTrace();
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					isNoError=false;
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					isNoError=false;
-					e.printStackTrace();
-
-				} catch (URISyntaxException e) {
-					// TODO Auto-generated catch block
-					isNoError=false;
-					e.printStackTrace();
-				}
-//			try{
-//
-//				///	System.out.println("Start to speak:"+params[0]);
-//				String text=URLEncoder.encode(simplify(params[0]), "UTF-8");
-//				String url=String.format(API, text);
-//
-//				//System.out.println("url:"+url);
-//				mpeg=new MediaPlayer();
-//				mpeg.setDataSource(url);
-//				mpeg.prepare();
-//				mpeg.start();
-//				mpeg.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {//完毕事件  
-//					@Override 
-//					public void onCompletion(MediaPlayer arg0) {  
-//						mpeg.release();  
-//					}  
-//				});  
-//			}
-//			catch(Exception e){
-//				isNoError=false;
-//			}
-//			
+				e.printStackTrace();
+				isNoError=false;
 			}
 			return params[0];
 		}
 		@Override
 		protected void onPostExecute(String result) {
-			// TODO Auto-generated method stub
-			//progressDialog.dismiss();
 			if(isNoError){
 				Toast toast=Toast.makeText(ActKana.this,result,Toast.LENGTH_SHORT);
 				toast.setGravity(Gravity.CENTER, 0, 0);
-				LinearLayout toastView=(LinearLayout)toast.getView();
+				ViewGroup toastView=(ViewGroup) toast.getView();
 				ImageView image=new ImageView(ActKana.this);
 				image.setImageResource(R.drawable.speak_on);
 				toastView.addView(image);
 				toast.show();
 			}
 			else{
-				if(!hasAudio(text)){
 				Toast toast=Toast.makeText(ActKana.this,R.string.fetch_error,Toast.LENGTH_SHORT);
 				toast.setGravity(Gravity.CENTER, 0, 0);
-				toast.show();	
-				}
-
+				toast.show();
 			}
 		}
-
 	}
+
 	public void onResume(){
 		super.onResume();
-	MobclickAgent.onResume(this);
-
-
-
+		MobclickAgent.onResume(this);
 	}
+
 	public void onPause(){
 		super.onPause();
-		MobclickAgent.onPause(this); 
-
+		MobclickAgent.onPause(this);
 	}
 
 	public String simplify(String s){
@@ -713,7 +624,6 @@ public class ActKana extends Activity {
 				return s.substring(0,p);
 			else
 				return s.substring(0,q);
-
 		}
 	}
 
@@ -721,7 +631,6 @@ public class ActKana extends Activity {
 	public void onDestroy(){
 		super.onDestroy();
 	}
-
 
 	public class MyView extends View {
 
@@ -770,23 +679,11 @@ public class ActKana extends Activity {
 
 		@Override
 		protected void onDraw(Canvas c) {
-            
-		/*	canvas.drawColor(Color.BLACK);
-
-			canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
-
-			canvas.drawPath(mPath, mPaint);
-			
-			System.out.println("On Draw called!");
-			*/
 			c.drawColor(Color.BLACK);
 			c.drawBitmap(bitmap, 0, 0, mBitmapPaint);
 			c.drawPath(seg,mPaint);
 			Rect rect=new Rect(0,0,109,109);
 			c.drawRect(rect, mPaint);
-			
-			
-			
 		}
 
 		private float mX, mY;
@@ -857,7 +754,6 @@ public class ActKana extends Activity {
 		}
 
 		public void run() {
-			// TODO Auto-generated method stub
 			
 			System.out.println("Stroke nums:"+vp.size());
 			for(int i=0;i<vp.size();++i)
@@ -899,31 +795,6 @@ public class ActKana extends Activity {
 				    	   }
 			    	}
 
-				 
-				
-				/*	PathMeasure pm=new PathMeasure(vp.get(i),false);
-		    float len=pm.getLength();
-		    System.out.println("Len:"+len);
-		    float start=0.0f,end;
-		    float delta=1.0f;
-		        while(start<len)
-		    	{
-		    	   end=min(start+delta,len);
-		    	   pm.getSegment(start, end, seg,true);
-
-
-
-		    	   start+=delta;
-
-		    	
-		    	//   System.out.println("hello");
-		    	}
-
-
-
-
-
-				 */
 			}
 
 

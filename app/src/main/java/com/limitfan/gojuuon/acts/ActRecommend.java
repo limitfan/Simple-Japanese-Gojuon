@@ -52,12 +52,7 @@ public class ActRecommend extends Activity {
 			    	
 			    	
 			    });
-		    
-		    
-		    //System.out.println("ActDictDetail taskId:"+this.getTaskId());
-		    
-		    //System.out.println(tag+Common.activityGroup().viewContents.getChildCount());
-		    
+
 		    TextView back=(TextView)findViewById(R.id.back);
 		    back.setOnClickListener(new BackListener());
 		   

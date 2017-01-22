@@ -32,9 +32,6 @@ import java.util.Vector;
 public class ActYouon extends Activity {
 	LinearLayout table;
 	TextView button;
-	
-	
-	
 
 	QuickAction quickAction;
 	//action id
@@ -42,14 +39,11 @@ public class ActYouon extends Activity {
 	private static final int ID_KATAPRON  = 2;
 	private static final int ID_HELP=3;
 
-
-
 	TextView modeName;
 	int curMode=1;
 	
 	boolean showAd=true;
 	public void hira_kata_exchange(){
-		
 		if(isHira){
 			if(curMode>1){
 			hira2kata();
@@ -63,6 +57,7 @@ public class ActYouon extends Activity {
 			 }
 		   }
 	}
+
 	public void changeMode(int actionId){
 		int newMode=actionId;
 		if(newMode!=curMode){
@@ -99,8 +94,6 @@ public class ActYouon extends Activity {
 
 	}
 	public void initializeActionBar(){
-
-
 		String hp=this.getResources().getString(R.string.menu_hira_pron);
 		String hs=this.getResources().getString(R.string.menu_hira_draw);
 		String hd=this.getResources().getString(R.string.menu_hira_demo);
@@ -158,12 +151,9 @@ public class ActYouon extends Activity {
     }
 	 public void onCreate(Bundle paramBundle)
 	  {
-		// System.out.println("ActYouon:Here!!!!");
+
 	    super.onCreate(paramBundle);
-	    
-	    
-	   // TextView tv=new TextView(this);
-	   // tv.setText("hellO");
+
 	    setContentView(R.layout.youon);
 	    new SoundPoolThread().start();
 	    
